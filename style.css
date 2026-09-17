@@ -28,3 +28,16 @@
 .quick-history-table{padding:10px 12px 6px}.quick-history-row{height:39px}.quick-history-row>span:first-child{width:82px}.quick-history-label{height:28px;padding:0 8px;background:#fff4ec;font-size:11px;font-weight:600}.quick-period-label{color:#b65b35!important;text-align:left}.quick-balls-label{color:#b65b35!important;text-align:left}.quick-period{text-align:left;padding-left:8px}.quick-period b{display:block;font-size:13px;line-height:15px;color:#4a4a4a;letter-spacing:.2px}.quick-period small{font-size:10px;line-height:13px}.quick-balls{justify-content:flex-start;gap:5px;padding-left:2px}.quick-balls .ball{width:24px;height:24px;font-size:12px;font-weight:700}
 .quick-history-footer{height:43px;padding:0 12px;font-size:10px}.quick-history-footer>span{display:flex;align-items:center;gap:6px}.live-dot{width:7px;height:7px;border-radius:50%;background:#fe6318;box-shadow:0 0 0 3px #fe63181c;display:inline-block}.quick-trend{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 10px 0 9px;background:linear-gradient(100deg,#e55461,#ef7556);font-size:11px;font-weight:700;border:1px solid #fff5;border-radius:10px;box-shadow:0 4px 9px #b63c4538}.quick-trend img{width:16px;height:16px;filter:brightness(0) invert(1);opacity:1}.quick-trend span{line-height:1}.quick-trend b{font-size:18px;font-weight:400;line-height:14px;margin-left:1px}.quick-trend:hover,.quick-trend:focus-visible{background:linear-gradient(100deg,#cb4655,#dc604e);transform:translateY(-1px)}
 @media(max-width:360px){.quick-history-table{padding-left:8px;padding-right:8px}.quick-history-row>span:first-child{width:65px}.quick-period{padding-left:4px}.quick-period b{font-size:12px}.quick-balls{gap:2px}.quick-balls .ball{width:21px;height:21px;font-size:10px}.quick-history-footer{padding:0 9px}.quick-trend{padding-left:7px;padding-right:8px}}
+
+/* Branded collapse control: a quiet chevron replaces the old text glyph. */
+.quick-history-head .quick-history-close{position:relative;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex:0 0 32px;margin-left:auto;color:transparent;border:1px solid #ffffff88;border-radius:10px;background:#ffffff1c;box-shadow:0 2px 6px #a33a1b33;transition:background .18s,border-color .18s,transform .18s;-webkit-tap-highlight-color:transparent}
+.quick-history-head .quick-history-close::before{content:'';width:8px;height:8px;border-left:2px solid #fff;border-top:2px solid #fff;transform:translateY(2px) rotate(45deg)}
+.quick-history-head .quick-history-close:hover,.quick-history-head .quick-history-close:focus-visible{background:#ffffff33;border-color:#fff;transform:translateY(-1px)}
+.quick-history-head .quick-history-close:active{transform:translateY(0) scale(.96)}
+@media(max-width:360px){.quick-history-head .quick-history-close{width:30px;height:30px;flex-basis:30px;border-radius:9px}}
+
+/* Center the simplified Chinese title while keeping the close control on the edge. */
+.quick-history-head{position:relative;justify-content:center}
+.quick-history-head .quick-history-title{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap}
+.quick-history-head .quick-history-title strong{font-size:15px;font-weight:700;letter-spacing:.5px;color:#fff}
+.quick-period small{font-size:12px;line-height:15px;color:#a76b50;font-weight:500;letter-spacing:.2px}
