@@ -1,0 +1,1576 @@
+[
+  {
+    "id": "leftnav_0",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "冠亚大",
+            "odds": "2.2",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "冠亚小",
+            "odds": "1.78",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "冠亚单",
+            "odds": "1.78",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "冠亚双",
+            "odds": "2.2",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "冠/亚军和"
+      },
+      {
+        "items": [
+          {
+            "con": "冠军 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "冠军 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "冠军 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "冠军 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "冠军 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "冠军 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "冠军"
+      },
+      {
+        "items": [
+          {
+            "con": "亚军 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "亚军 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "亚军 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "亚军 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "亚军 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "亚军 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "亚军"
+      },
+      {
+        "items": [
+          {
+            "con": "第三名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第三名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第三名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第三名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "第三名 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "第三名 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "第三名"
+      },
+      {
+        "items": [
+          {
+            "con": "第四名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第四名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第四名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第四名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "第四名 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "第四名 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "第四名"
+      },
+      {
+        "items": [
+          {
+            "con": "第五名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第五名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第五名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第五名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "第五名 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "第五名 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "第五名"
+      },
+      {
+        "items": [
+          {
+            "con": "第六名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第六名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第六名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第六名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第六名"
+      },
+      {
+        "items": [
+          {
+            "con": "第七名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第七名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第七名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第七名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第七名"
+      },
+      {
+        "items": [
+          {
+            "con": "第八名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第八名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第八名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第八名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第八名"
+      },
+      {
+        "items": [
+          {
+            "con": "第九名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第九名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第九名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第九名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第九名"
+      },
+      {
+        "items": [
+          {
+            "con": "第十名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第十名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第十名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第十名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第十名"
+      }
+    ],
+    "tabs": [],
+    "title": "冠/亚军和"
+  },
+  {
+    "id": "leftnav_1",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "冠亚和3",
+            "odds": "42",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "冠亚和4",
+            "odds": "42",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "冠亚和5",
+            "odds": "20",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "冠亚和6",
+            "odds": "20",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "冠亚和7",
+            "odds": "13",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "冠亚和8",
+            "odds": "13",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "冠亚和9",
+            "odds": "9",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "冠亚和10",
+            "odds": "9",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "冠亚和11",
+            "odds": "8.7",
+            "position": "",
+            "value": "11"
+          },
+          {
+            "con": "冠亚和12",
+            "odds": "9",
+            "position": "",
+            "value": "12"
+          },
+          {
+            "con": "冠亚和13",
+            "odds": "9",
+            "position": "",
+            "value": "13"
+          },
+          {
+            "con": "冠亚和14",
+            "odds": "13",
+            "position": "",
+            "value": "14"
+          },
+          {
+            "con": "冠亚和15",
+            "odds": "13",
+            "position": "",
+            "value": "15"
+          },
+          {
+            "con": "冠亚和16",
+            "odds": "20",
+            "position": "",
+            "value": "16"
+          },
+          {
+            "con": "冠亚和17",
+            "odds": "20",
+            "position": "",
+            "value": "17"
+          },
+          {
+            "con": "冠亚和18",
+            "odds": "42",
+            "position": "",
+            "value": "18"
+          },
+          {
+            "con": "冠亚和19",
+            "odds": "42",
+            "position": "",
+            "value": "19"
+          },
+          {
+            "con": "冠亚大",
+            "odds": "2.2",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "冠亚小",
+            "odds": "1.78",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "冠亚单",
+            "odds": "1.78",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "冠亚双",
+            "odds": "2.2",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "冠亚双",
+            "odds": "4.2",
+            "position": "",
+            "value": "大双"
+          },
+          {
+            "con": "冠亚双",
+            "odds": "4.2",
+            "position": "",
+            "value": "大单"
+          },
+          {
+            "con": "冠亚双",
+            "odds": "4.2",
+            "position": "",
+            "value": "小双"
+          },
+          {
+            "con": "冠亚双",
+            "odds": "2.9",
+            "position": "",
+            "value": "小单"
+          }
+        ],
+        "title": "冠亚和"
+      }
+    ],
+    "tabs": [],
+    "title": "冠亚和"
+  },
+  {
+    "id": "leftnav_2",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "冠军 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "冠军 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "冠军 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "冠军 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "冠军 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "冠军 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "冠军 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "冠军 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "冠军9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "冠军 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "冠军 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "冠军 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "冠军 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "冠军 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "冠军 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "冠军 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "冠军"
+      }
+    ],
+    "tabs": [],
+    "title": "冠军"
+  },
+  {
+    "id": "leftnav_3",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "亚军 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "亚军 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "亚军 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "亚军 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "亚军 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "亚军 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "亚军 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "亚军 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "亚军 9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "亚军 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "亚军 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "亚军 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "亚军 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "亚军 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "亚军 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "亚军 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "亚军"
+      }
+    ],
+    "tabs": [],
+    "title": "亚军"
+  },
+  {
+    "id": "leftnav_4",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第三名1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第三名 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第三名 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第三名 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第三名 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第三名 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第三名 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第三名 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第三名 9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第三名 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第三名 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第三名 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第三名 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第三名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "第三名 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "第三名 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "第三名"
+      }
+    ],
+    "tabs": [],
+    "title": "第三名"
+  },
+  {
+    "id": "leftnav_5",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第四名 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第四名   2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第四名   3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第四名   4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第四名   5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第四名   6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第四名   7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第四名   8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第四名   9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第四名   10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第四名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第四名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第四名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第四名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "第四名 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "第四名 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "第四名"
+      }
+    ],
+    "tabs": [],
+    "title": "第四名"
+  },
+  {
+    "id": "leftnav_6",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第五名  1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第五名   2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第五名   3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第五名   4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第五名   5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第五名   6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第五名   7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第五名   8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第五名   9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第五名   10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第五名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第五名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第五名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第五名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": "第五名 龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "第五名 虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          }
+        ],
+        "title": "第五名"
+      }
+    ],
+    "tabs": [],
+    "title": "第五名"
+  },
+  {
+    "id": "leftnav_7",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第六名 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第六名   2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第六名   3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第六名   4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第六名   5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第六名   6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第六名   7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第六名   8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第六名   9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第六名   10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第六名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第六名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第六名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第六名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第六名"
+      }
+    ],
+    "tabs": [],
+    "title": "第六名"
+  },
+  {
+    "id": "leftnav_8",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第七名 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第七名 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第七名 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第七名 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第七名 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第七名 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第七名 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第七名 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第七名 9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第七名 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第七名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第七名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第七名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第七名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第七名"
+      }
+    ],
+    "tabs": [],
+    "title": "第七名"
+  },
+  {
+    "id": "leftnav_9",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第八名 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第八名 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第八名 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第八名 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第八名 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第八名 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第八名 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第八名 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第八名 9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第八名 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第八名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第八名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第八名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第八名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第八名"
+      }
+    ],
+    "tabs": [],
+    "title": "第八名"
+  },
+  {
+    "id": "leftnav_10",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第九名 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第九名 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第九名 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第九名 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第九名 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第九名 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第九名 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第九名 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第九名 9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第九名 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第九名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第九名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第九名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第九名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第九名"
+      }
+    ],
+    "tabs": [],
+    "title": "第九名"
+  },
+  {
+    "id": "leftnav_11",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第十名 1",
+            "odds": "9.91",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第十名 2",
+            "odds": "9.91",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第十名 3",
+            "odds": "9.91",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第十名 4",
+            "odds": "9.91",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第十名 5",
+            "odds": "9.91",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第十名 6",
+            "odds": "9.91",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第十名 7",
+            "odds": "9.91",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第十名 8",
+            "odds": "9.91",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第十名 9",
+            "odds": "9.91",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第十名 10",
+            "odds": "9.91",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "第十名  大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第十名  小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第十名  单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第十名 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第十名"
+      }
+    ],
+    "tabs": [],
+    "title": "第十名"
+  },
+  {
+    "id": "leftnav_12",
+    "sections": [],
+    "tabs": [],
+    "title": ""
+  }
+]

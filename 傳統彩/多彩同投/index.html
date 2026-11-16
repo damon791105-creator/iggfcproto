@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#e96724">
+  <title>多彩同投 · 手机原型</title>
+  <link rel="icon" href="../assets/IG_favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header class="topbar">
+      <button class="back" aria-label="返回" type="button">‹</button>
+      <div class="brand"><strong>多彩同投</strong></div>
+      <button class="menu" aria-label="功能选单" type="button"><i></i><i></i><i></i></button>
+      <nav class="mode-switch" aria-label="投注界面切换"><a href="../index.html#gamePage">经典投注</a><span aria-current="page">多彩同投</span></nav>
+    </header>
+    <section class="overview">
+      <div class="overview-copy"><small>我的投注桌</small><div><strong id="selected-count">9</strong><span>个彩种</span><b class="dot">·</b><strong id="bet-count">0</strong><span>注待投</span></div></div>
+      <button id="add-game" class="add-game" type="button"><b>＋</b> 添加彩种</button>
+    </section>
+    <div class="nav-label"><span>快速前往</span><span aria-hidden="true">← 左右滑动 →</span></div>
+    <nav id="category-nav" class="category-nav" aria-label="彩种分类"></nav>
+    <section id="cards" class="cards" aria-live="polite"></section>
+    <footer class="checkout">
+      <div class="total"><small>已选 <b id="summary-count">0</b> 注</small><strong>¥ <span id="summary-total">0.00</span></strong></div>
+      <button id="checkout" class="checkout-button" type="button" disabled>确认投注</button>
+    </footer>
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="返回顶部" title="返回顶部" hidden><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5m-6 7 6-7 6 7" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="reference-mobile-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

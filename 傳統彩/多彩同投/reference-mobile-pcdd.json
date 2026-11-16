@@ -1,0 +1,293 @@
+[
+  {
+    "id": "leftnav_0",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "980",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": null,
+            "odds": "320",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": null,
+            "odds": "160",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": null,
+            "odds": "96",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": null,
+            "odds": "64",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": null,
+            "odds": "46",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "35",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "27",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "21.5",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "17.5",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": null,
+            "odds": "15.5",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": null,
+            "odds": "14",
+            "position": "",
+            "value": "11"
+          },
+          {
+            "con": null,
+            "odds": "13.2",
+            "position": "",
+            "value": "12"
+          },
+          {
+            "con": null,
+            "odds": "13",
+            "position": "",
+            "value": "13"
+          },
+          {
+            "con": null,
+            "odds": "13",
+            "position": "",
+            "value": "14"
+          },
+          {
+            "con": null,
+            "odds": "13.2",
+            "position": "",
+            "value": "15"
+          },
+          {
+            "con": null,
+            "odds": "14",
+            "position": "",
+            "value": "16"
+          },
+          {
+            "con": null,
+            "odds": "15.5",
+            "position": "",
+            "value": "17"
+          },
+          {
+            "con": null,
+            "odds": "17.5",
+            "position": "",
+            "value": "18"
+          },
+          {
+            "con": null,
+            "odds": "21.5",
+            "position": "",
+            "value": "19"
+          },
+          {
+            "con": null,
+            "odds": "27",
+            "position": "",
+            "value": "20"
+          },
+          {
+            "con": null,
+            "odds": "35",
+            "position": "",
+            "value": "21"
+          },
+          {
+            "con": null,
+            "odds": "46",
+            "position": "",
+            "value": "22"
+          },
+          {
+            "con": null,
+            "odds": "64",
+            "position": "",
+            "value": "23"
+          },
+          {
+            "con": null,
+            "odds": "96",
+            "position": "",
+            "value": "24"
+          },
+          {
+            "con": null,
+            "odds": "160",
+            "position": "",
+            "value": "25"
+          },
+          {
+            "con": null,
+            "odds": "320",
+            "position": "",
+            "value": "26"
+          },
+          {
+            "con": null,
+            "odds": "980",
+            "position": "",
+            "value": "27"
+          }
+        ],
+        "title": "和值"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": null,
+            "odds": "17.3",
+            "position": "",
+            "value": "极大"
+          },
+          {
+            "con": null,
+            "odds": "17.3",
+            "position": "",
+            "value": "极小"
+          },
+          {
+            "con": null,
+            "odds": "3.6",
+            "position": "",
+            "value": "大单"
+          },
+          {
+            "con": null,
+            "odds": "3.6",
+            "position": "",
+            "value": "小单"
+          },
+          {
+            "con": null,
+            "odds": "3.6",
+            "position": "",
+            "value": "大双"
+          },
+          {
+            "con": null,
+            "odds": "3.6",
+            "position": "",
+            "value": "小双"
+          }
+        ],
+        "title": "两面"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "2.8",
+            "position": "",
+            "value": "红波"
+          },
+          {
+            "con": null,
+            "odds": "2.8",
+            "position": "",
+            "value": "绿波"
+          },
+          {
+            "con": null,
+            "odds": "2.8",
+            "position": "",
+            "value": "蓝波"
+          },
+          {
+            "con": null,
+            "odds": "88",
+            "position": "",
+            "value": "豹子"
+          }
+        ],
+        "title": "色波/豹子"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "3.36",
+            "position": "",
+            "value": "特码包三"
+          }
+        ],
+        "title": "包三"
+      }
+    ],
+    "tabs": [],
+    "title": "和值"
+  },
+  {
+    "id": "leftnav_1",
+    "sections": [],
+    "tabs": [],
+    "title": ""
+  }
+]

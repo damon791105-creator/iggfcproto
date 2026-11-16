@@ -1,0 +1,3541 @@
+[
+  {
+    "id": "leftnav_0",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第一球 0",
+            "odds": "9.94",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "9.94",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "9.94",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第一球3",
+            "odds": "9.94",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "9.94",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "9.94",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "9.94",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "9.94",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第一球8",
+            "odds": "9.94",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "9.94",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第一球 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第一球 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第一球 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第一球 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第一球(佰)"
+      }
+    ],
+    "tabs": [],
+    "title": "第一球(佰)"
+  },
+  {
+    "id": "leftnav_1",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第二球 0",
+            "odds": "9.94",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": "第二球 1",
+            "odds": "9.94",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第二球 2",
+            "odds": "9.94",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第二球 3",
+            "odds": "9.94",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第二球 4",
+            "odds": "9.94",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第二球 5",
+            "odds": "9.94",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第二球 6",
+            "odds": "9.94",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第二球 7",
+            "odds": "9.94",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第二球 8",
+            "odds": "9.94",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第二球 9",
+            "odds": "9.94",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第二球 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第二球 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第二球 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第二球 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第二球(拾)"
+      }
+    ],
+    "tabs": [],
+    "title": "第二球(拾)"
+  },
+  {
+    "id": "leftnav_2",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第三球 0",
+            "odds": "9.94",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": "第三球 1",
+            "odds": "9.94",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第三球 2",
+            "odds": "9.94",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第三球 3",
+            "odds": "9.94",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第三球 4",
+            "odds": "9.94",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第三球 5",
+            "odds": "9.94",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第三球 6",
+            "odds": "9.94",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第三球 7",
+            "odds": "9.94",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第三球 8",
+            "odds": "9.94",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第三球 9",
+            "odds": "9.94",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "第三球 大",
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": "第三球 小",
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": "第三球 单",
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": "第三球 双",
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          }
+        ],
+        "title": "第三球(个)"
+      }
+    ],
+    "tabs": [],
+    "title": "第三球(个)"
+  },
+  {
+    "id": "leftnav_3",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第一球 0",
+            "odds": "3.22",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "3.22",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "3.22",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第一球 3",
+            "odds": "3.22",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "3.22",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "3.22",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "3.22",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "3.22",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第一球 8",
+            "odds": "3.22",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "3.22",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "整合(独胆)"
+      },
+      {
+        "items": [
+          {
+            "con": "第二球 0",
+            "odds": "86.39",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": "第二球 1",
+            "odds": "16.77",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "第二球 2",
+            "odds": "9.44",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "第二球 3",
+            "odds": "7.23",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "第二球4",
+            "odds": "6.23",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "第二球 5",
+            "odds": "6.03",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "第二球 6",
+            "odds": "6.23",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "第二球 7",
+            "odds": "7.23",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "第二球 8",
+            "odds": "9.44",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "第二球 9",
+            "odds": "16.77",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "整合(跨度)"
+      },
+      {
+        "items": [
+          {
+            "con": "总和大",
+            "odds": "1.98",
+            "position": "",
+            "value": "总和大"
+          },
+          {
+            "con": "总和小",
+            "odds": "1.98",
+            "position": "",
+            "value": "总和小"
+          },
+          {
+            "con": "总和单",
+            "odds": "1.98",
+            "position": "",
+            "value": "总和单"
+          },
+          {
+            "con": "总和双",
+            "odds": "1.98",
+            "position": "",
+            "value": "总和双"
+          },
+          {
+            "con": "龙",
+            "odds": "1.98",
+            "position": "",
+            "value": "龙"
+          },
+          {
+            "con": "虎",
+            "odds": "1.98",
+            "position": "",
+            "value": "虎"
+          },
+          {
+            "con": "和",
+            "odds": "9.04",
+            "position": "",
+            "value": "和"
+          }
+        ],
+        "title": "整合(总和，龙虎)"
+      },
+      {
+        "items": [
+          {
+            "con": "豹子",
+            "odds": "90.4",
+            "position": "",
+            "value": "豹子"
+          },
+          {
+            "con": "顺子",
+            "odds": "15.67",
+            "position": "",
+            "value": "顺子"
+          },
+          {
+            "con": "对子",
+            "odds": "3.54",
+            "position": "",
+            "value": "对子"
+          },
+          {
+            "con": "半顺",
+            "odds": "2.66",
+            "position": "",
+            "value": "半顺"
+          },
+          {
+            "con": "杂六",
+            "odds": "3.22",
+            "position": "",
+            "value": "杂六"
+          }
+        ],
+        "title": "整合(3连)"
+      }
+    ],
+    "tabs": [],
+    "title": "整合(独胆)"
+  },
+  {
+    "id": "leftnav_4",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个和数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个和尾数"
+          }
+        ],
+        "title": "主势盘(大)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个和数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个和尾数"
+          }
+        ],
+        "title": "主势盘(小)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个"
+          }
+        ],
+        "title": "主势盘(单)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个"
+          }
+        ],
+        "title": "主势盘(双)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个和尾数"
+          }
+        ],
+        "title": "主势盘(质)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "个"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "拾个和尾数"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "佰拾个和尾数"
+          }
+        ],
+        "title": "主势盘(合)"
+      }
+    ],
+    "tabs": [],
+    "title": "主势盘(大)"
+  },
+  {
+    "id": "leftnav_5",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "3.22",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "一字组合(独胆)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "质"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "合"
+          }
+        ],
+        "title": "一字组合(两面 佰)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "质"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "合"
+          }
+        ],
+        "title": "一字组合(两面 拾)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "大"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "小"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "单"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "双"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "质"
+          },
+          {
+            "con": null,
+            "odds": "1.98",
+            "position": "",
+            "value": "合"
+          }
+        ],
+        "title": "一字组合(两面 个)"
+      }
+    ],
+    "tabs": [],
+    "title": "一字组合(独胆)"
+  },
+  {
+    "id": "leftnav_6",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "00"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "01"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "02"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "03"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "04"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "05"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "06"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "07"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "08"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "09"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "11"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "12"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "13"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "14"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "15"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "16"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "17"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "18"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "19"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "22"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "23"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "24"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "25"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "26"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "27"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "28"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "29"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "33"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "34"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "35"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "36"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "37"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "38"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "39"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "44"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "45"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "46"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "47"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "48"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "49"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "55"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "56"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "57"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "58"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "59"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "66"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "67"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "68"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "69"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "77"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "78"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "79"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "88"
+          },
+          {
+            "con": null,
+            "odds": "16.57",
+            "position": "",
+            "value": "89"
+          },
+          {
+            "con": null,
+            "odds": "31.95",
+            "position": "",
+            "value": "99"
+          }
+        ],
+        "title": "二字组合"
+      }
+    ],
+    "tabs": [],
+    "title": "二字组合"
+  },
+  {
+    "id": "leftnav_7",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "000"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "001"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "002"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "003"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "004"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "005"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "006"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "007"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "008"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "009"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "011"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "012"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "013"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "014"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "015"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "016"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "017"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "018"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "019"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "022"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "023"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "024"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "025"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "026"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "027"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "028"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "029"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "033"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "034"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "035"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "036"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "037"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "038"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "039"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "044"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "045"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "046"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "047"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "048"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "049"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "055"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "056"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "057"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "058"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "059"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "066"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "067"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "068"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "069"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "077"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "078"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "079"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "088"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "089"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "099"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "111"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "112"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "113"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "114"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "115"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "116"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "117"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "118"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "119"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "122"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "123"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "124"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "125"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "126"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "127"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "128"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "129"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "133"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "134"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "135"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "136"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "137"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "138"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "139"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "144"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "145"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "146"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "147"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "148"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "149"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "155"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "156"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "157"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "158"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "159"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "166"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "167"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "168"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "169"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "177"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "178"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "179"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "188"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "189"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "199"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "222"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "223"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "224"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "225"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "226"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "227"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "228"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "229"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "233"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "234"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "235"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "236"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "237"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "238"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "239"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "244"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "245"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "246"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "247"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "248"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "249"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "255"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "256"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "257"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "258"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "259"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "266"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "267"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "268"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "269"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "277"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "278"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "279"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "288"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "289"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "299"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "333"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "334"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "335"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "336"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "337"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "338"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "339"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "344"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "345"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "346"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "347"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "348"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "349"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "355"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "356"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "357"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "358"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "359"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "366"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "367"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "368"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "369"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "377"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "378"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "379"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "388"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "389"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "399"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "444"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "445"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "446"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "447"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "448"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "449"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "455"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "456"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "457"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "458"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "459"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "466"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "467"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "468"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "469"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "477"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "478"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "479"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "488"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "489"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "499"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "555"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "556"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "557"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "558"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "559"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "566"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "567"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "568"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "569"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "577"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "578"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "579"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "588"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "589"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "599"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "666"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "667"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "668"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "669"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "677"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "678"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "679"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "688"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "689"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "699"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "777"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "778"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "779"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "788"
+          },
+          {
+            "con": null,
+            "odds": "150.68",
+            "position": "",
+            "value": "789"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "799"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "888"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "889"
+          },
+          {
+            "con": null,
+            "odds": "281.27",
+            "position": "",
+            "value": "899"
+          },
+          {
+            "con": null,
+            "odds": "924.18",
+            "position": "",
+            "value": "999"
+          }
+        ],
+        "title": "三字组合"
+      }
+    ],
+    "tabs": [],
+    "title": "三字组合"
+  },
+  {
+    "id": "leftnav_8",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第一球 0",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "2"
+          },
+          {
+            "con": "第一球3",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "7"
+          },
+          {
+            "con": "第一球8",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "97.44",
+            "position": "佰",
+            "value": "9"
+          },
+          {
+            "con": "第一球 0",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "2"
+          },
+          {
+            "con": "第一球3",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "7"
+          },
+          {
+            "con": "第一球8",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "97.44",
+            "position": "拾",
+            "value": "9"
+          }
+        ],
+        "title": "二字定位"
+      }
+    ],
+    "tabs": [
+      {
+        "bettype": "OOX",
+        "label": "佰拾定位"
+      },
+      {
+        "bettype": "OXO",
+        "label": "佰个定位"
+      },
+      {
+        "bettype": "XOO",
+        "label": "拾个定位"
+      }
+    ],
+    "title": "二字定位"
+  },
+  {
+    "id": "leftnav_9",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "第一球 0",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "2"
+          },
+          {
+            "con": "第一球3",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "7"
+          },
+          {
+            "con": "第一球8",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "974.41",
+            "position": "佰",
+            "value": "9"
+          },
+          {
+            "con": "第一球 0",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "2"
+          },
+          {
+            "con": "第一球3",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "7"
+          },
+          {
+            "con": "第一球8",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "974.41",
+            "position": "拾",
+            "value": "9"
+          },
+          {
+            "con": "第一球 0",
+            "odds": "974.41",
+            "position": "个",
+            "value": "0"
+          },
+          {
+            "con": "第一球 1",
+            "odds": "974.41",
+            "position": "个",
+            "value": "1"
+          },
+          {
+            "con": "第一球 2",
+            "odds": "974.41",
+            "position": "个",
+            "value": "2"
+          },
+          {
+            "con": "第一球3",
+            "odds": "974.41",
+            "position": "个",
+            "value": "3"
+          },
+          {
+            "con": "第一球 4",
+            "odds": "974.41",
+            "position": "个",
+            "value": "4"
+          },
+          {
+            "con": "第一球 5",
+            "odds": "974.41",
+            "position": "个",
+            "value": "5"
+          },
+          {
+            "con": "第一球 6",
+            "odds": "974.41",
+            "position": "个",
+            "value": "6"
+          },
+          {
+            "con": "第一球 7",
+            "odds": "974.41",
+            "position": "个",
+            "value": "7"
+          },
+          {
+            "con": "第一球8",
+            "odds": "974.41",
+            "position": "个",
+            "value": "8"
+          },
+          {
+            "con": "第一球 9",
+            "odds": "974.41",
+            "position": "个",
+            "value": "9"
+          }
+        ],
+        "title": "三字定位"
+      }
+    ],
+    "tabs": [],
+    "title": "三字定位"
+  },
+  {
+    "id": "leftnav_10",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "5.23",
+            "position": "",
+            "value": "0~4"
+          },
+          {
+            "con": null,
+            "odds": "13.26",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "11.25",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "11.25",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "9.04",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "9.04",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": null,
+            "odds": "9.04",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": null,
+            "odds": "11.25",
+            "position": "",
+            "value": "11"
+          },
+          {
+            "con": null,
+            "odds": "11.25",
+            "position": "",
+            "value": "12"
+          },
+          {
+            "con": null,
+            "odds": "13.26",
+            "position": "",
+            "value": "13"
+          },
+          {
+            "con": null,
+            "odds": "5.23",
+            "position": "",
+            "value": "14~18"
+          }
+        ],
+        "title": "佰拾和数"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "佰拾和数尾数"
+      }
+    ],
+    "tabs": [
+      {
+        "bettype": null,
+        "label": "佰拾"
+      },
+      {
+        "bettype": null,
+        "label": "佰个"
+      },
+      {
+        "bettype": null,
+        "label": "拾个"
+      }
+    ],
+    "title": "二字和数"
+  },
+  {
+    "id": "leftnav_11",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "9.44",
+            "position": "",
+            "value": "0~6"
+          },
+          {
+            "con": null,
+            "odds": "21.6",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "17.28",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "14.27",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": null,
+            "odds": "12.56",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": null,
+            "odds": "11.55",
+            "position": "",
+            "value": "11"
+          },
+          {
+            "con": null,
+            "odds": "11.05",
+            "position": "",
+            "value": "12"
+          },
+          {
+            "con": null,
+            "odds": "10.84",
+            "position": "",
+            "value": "13"
+          },
+          {
+            "con": null,
+            "odds": "10.84",
+            "position": "",
+            "value": "14"
+          },
+          {
+            "con": null,
+            "odds": "11.05",
+            "position": "",
+            "value": "15"
+          },
+          {
+            "con": null,
+            "odds": "11.55",
+            "position": "",
+            "value": "16"
+          },
+          {
+            "con": null,
+            "odds": "12.56",
+            "position": "",
+            "value": "17"
+          },
+          {
+            "con": null,
+            "odds": "14.27",
+            "position": "",
+            "value": "18"
+          },
+          {
+            "con": null,
+            "odds": "17.28",
+            "position": "",
+            "value": "19"
+          },
+          {
+            "con": null,
+            "odds": "21.6",
+            "position": "",
+            "value": "20"
+          },
+          {
+            "con": null,
+            "odds": "9.44",
+            "position": "",
+            "value": "21~27"
+          }
+        ],
+        "title": "三字和数(和数)"
+      },
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "9.74",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "三字和数(尾数)"
+      }
+    ],
+    "tabs": [],
+    "title": "三字和数(和数)"
+  },
+  {
+    "id": "leftnav_12",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "15.37",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "组选三"
+      }
+    ],
+    "tabs": [
+      {
+        "bettype": "GROUP3_OPTION_5",
+        "label": "5位数"
+      },
+      {
+        "bettype": "GROUP3_OPTION_6",
+        "label": "6位数"
+      },
+      {
+        "bettype": "GROUP3_OPTION_7",
+        "label": "7位数"
+      },
+      {
+        "bettype": "GROUP3_OPTION_8",
+        "label": "8位数"
+      },
+      {
+        "bettype": "GROUP3_OPTION_9",
+        "label": "9位数"
+      },
+      {
+        "bettype": "GROUP3_OPTION_10",
+        "label": "10位数"
+      }
+    ],
+    "title": "组选三"
+  },
+  {
+    "id": "leftnav_13",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "0"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": null,
+            "odds": "38.77",
+            "position": "",
+            "value": "9"
+          }
+        ],
+        "title": "组选六"
+      }
+    ],
+    "tabs": [
+      {
+        "bettype": "GROUP6_OPTION_4",
+        "label": "4位数"
+      },
+      {
+        "bettype": "GROUP6_OPTION_5",
+        "label": "5位数"
+      },
+      {
+        "bettype": "GROUP6_OPTION_6",
+        "label": "6位数"
+      },
+      {
+        "bettype": "GROUP6_OPTION_7",
+        "label": "7位数"
+      },
+      {
+        "bettype": "GROUP6_OPTION_8",
+        "label": "8位数"
+      }
+    ],
+    "title": "组选六"
+  },
+  {
+    "id": "leftnav_14",
+    "sections": [],
+    "tabs": [],
+    "title": ""
+  }
+]

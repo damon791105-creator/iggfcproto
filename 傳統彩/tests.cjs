@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const M=require('./model.js');
+const pk=M.configs.pk10;
+assert.equal(M.count([[1,2,3]],pk[0]),3,'冠军多选按号码计注');
+assert.equal(M.count([[1,2],[1,2]],pk[1]),2,'冠亚相同号码必须剔除');
+assert.equal(M.count([[1],[1]],pk[1]),0,'重复名次号码不是有效投注');
+assert.equal(M.count([[1],[]],pk[1]),0,'缺少必选位置应为零注');
+assert.equal(M.count(Array.from({length:5},()=>M.range(1,10)),pk[4]),30240,'前五全选为10P5');
+assert.equal(M.count([[1,2],[],[3]],pk[5]),3,'定位胆按各位置号码相加');
+assert.equal(M.count([[1,2],[3],[4],[5],[6,7]],M.configs.ssc[0]),4,'直选可跨位重复且按乘积计注');
+assert.equal(M.count([[1],[1],[1],[1],[1]],M.configs.ssc[0]),1);
+assert.equal(M.count([[1,2,3,4]],M.configs.x115[5]),6,'任选二组合计数');
+assert.equal(M.count([[1,2],[1,2],[1,2]],M.configs.x115[0]),0);
+assert.equal(M.amount(3,5,.01),.3,'分模式避免浮点误差');
+assert.equal(M.amount(2,3,.1),1.2);
+assert.equal(M.amount(2,3,1),12);
+console.log('13 calculation assertions passed.');

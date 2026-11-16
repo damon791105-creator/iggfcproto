@@ -1,0 +1,647 @@
+[
+  {
+    "id": "leftnav_0",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "总和大",
+            "odds": "1.982",
+            "position": "",
+            "value": "总和大"
+          },
+          {
+            "con": "总和小",
+            "odds": "1.982",
+            "position": "",
+            "value": "总和小"
+          },
+          {
+            "con": "总和单",
+            "odds": "1.982",
+            "position": "",
+            "value": "总和单"
+          },
+          {
+            "con": "总和双",
+            "odds": "1.982",
+            "position": "",
+            "value": "总和双"
+          },
+          {
+            "con": "总和810",
+            "odds": "99.12",
+            "position": "",
+            "value": "总和810"
+          },
+          {
+            "con": "总大单",
+            "odds": "3.805",
+            "position": "",
+            "value": "总大单"
+          },
+          {
+            "con": "总大双",
+            "odds": "3.805",
+            "position": "",
+            "value": "总大双"
+          },
+          {
+            "con": "总小单",
+            "odds": "3.805",
+            "position": "",
+            "value": "总小单"
+          },
+          {
+            "con": "总小双",
+            "odds": "3.805",
+            "position": "",
+            "value": "总小双"
+          }
+        ],
+        "title": "总和,总和过关"
+      },
+      {
+        "items": [
+          {
+            "con": "前（多）",
+            "odds": "1.982",
+            "position": "",
+            "value": "前(多)"
+          },
+          {
+            "con": "后（多）",
+            "odds": "1.982",
+            "position": "",
+            "value": "后(多)"
+          },
+          {
+            "con": "前后（多）",
+            "odds": "3.805",
+            "position": "",
+            "value": "前后(和)"
+          }
+        ],
+        "title": "前后和"
+      },
+      {
+        "items": [
+          {
+            "con": "单（多）",
+            "odds": "1.982",
+            "position": "",
+            "value": "单(多)"
+          },
+          {
+            "con": "双（多）",
+            "odds": "1.982",
+            "position": "",
+            "value": "双(多)"
+          },
+          {
+            "con": "单双（和）",
+            "odds": "3.805",
+            "position": "",
+            "value": "单双(和)"
+          }
+        ],
+        "title": "单双和"
+      },
+      {
+        "items": [
+          {
+            "con": "金",
+            "odds": "9.216",
+            "position": "",
+            "value": "金"
+          },
+          {
+            "con": "木",
+            "odds": "4.608",
+            "position": "",
+            "value": "木"
+          },
+          {
+            "con": "水",
+            "odds": "2.408",
+            "position": "",
+            "value": "水"
+          },
+          {
+            "con": "火",
+            "odds": "4.608",
+            "position": "",
+            "value": "火"
+          },
+          {
+            "con": "土",
+            "odds": "9.216",
+            "position": "",
+            "value": "土"
+          }
+        ],
+        "title": "五行"
+      }
+    ],
+    "tabs": [],
+    "title": "总和,总和过关"
+  },
+  {
+    "id": "leftnav_1",
+    "sections": [
+      {
+        "items": [
+          {
+            "con": "正码  1",
+            "odds": "3.805",
+            "position": "",
+            "value": "1"
+          },
+          {
+            "con": "正码  2",
+            "odds": "3.805",
+            "position": "",
+            "value": "2"
+          },
+          {
+            "con": "正码  3",
+            "odds": "3.805",
+            "position": "",
+            "value": "3"
+          },
+          {
+            "con": "正码  4",
+            "odds": "3.805",
+            "position": "",
+            "value": "4"
+          },
+          {
+            "con": "正码 5",
+            "odds": "3.805",
+            "position": "",
+            "value": "5"
+          },
+          {
+            "con": "正码  6",
+            "odds": "3.805",
+            "position": "",
+            "value": "6"
+          },
+          {
+            "con": "正码  7",
+            "odds": "3.805",
+            "position": "",
+            "value": "7"
+          },
+          {
+            "con": "正码  8",
+            "odds": "3.805",
+            "position": "",
+            "value": "8"
+          },
+          {
+            "con": "正码  9",
+            "odds": "3.805",
+            "position": "",
+            "value": "9"
+          },
+          {
+            "con": "正码  10",
+            "odds": "3.805",
+            "position": "",
+            "value": "10"
+          },
+          {
+            "con": "正码  11",
+            "odds": "3.805",
+            "position": "",
+            "value": "11"
+          },
+          {
+            "con": "正码  12",
+            "odds": "3.805",
+            "position": "",
+            "value": "12"
+          },
+          {
+            "con": "正码  13",
+            "odds": "3.805",
+            "position": "",
+            "value": "13"
+          },
+          {
+            "con": "正码  14",
+            "odds": "3.805",
+            "position": "",
+            "value": "14"
+          },
+          {
+            "con": "正码  15",
+            "odds": "3.805",
+            "position": "",
+            "value": "15"
+          },
+          {
+            "con": "正码  16",
+            "odds": "3.805",
+            "position": "",
+            "value": "16"
+          },
+          {
+            "con": "正码  17",
+            "odds": "3.805",
+            "position": "",
+            "value": "17"
+          },
+          {
+            "con": "正码  18",
+            "odds": "3.805",
+            "position": "",
+            "value": "18"
+          },
+          {
+            "con": "正码  19",
+            "odds": "3.805",
+            "position": "",
+            "value": "19"
+          },
+          {
+            "con": "正码  20",
+            "odds": "3.805",
+            "position": "",
+            "value": "20"
+          },
+          {
+            "con": "正码  21",
+            "odds": "3.805",
+            "position": "",
+            "value": "21"
+          },
+          {
+            "con": "正码  22",
+            "odds": "3.805",
+            "position": "",
+            "value": "22"
+          },
+          {
+            "con": "正码  23",
+            "odds": "3.805",
+            "position": "",
+            "value": "23"
+          },
+          {
+            "con": "正码  24",
+            "odds": "3.805",
+            "position": "",
+            "value": "24"
+          },
+          {
+            "con": "正码  25",
+            "odds": "3.805",
+            "position": "",
+            "value": "25"
+          },
+          {
+            "con": "正码  26",
+            "odds": "3.805",
+            "position": "",
+            "value": "26"
+          },
+          {
+            "con": "正码  27",
+            "odds": "3.805",
+            "position": "",
+            "value": "27"
+          },
+          {
+            "con": "正码  28",
+            "odds": "3.805",
+            "position": "",
+            "value": "28"
+          },
+          {
+            "con": "正码  29",
+            "odds": "3.805",
+            "position": "",
+            "value": "29"
+          },
+          {
+            "con": "正码  30",
+            "odds": "3.805",
+            "position": "",
+            "value": "30"
+          },
+          {
+            "con": "正码  31",
+            "odds": "3.805",
+            "position": "",
+            "value": "31"
+          },
+          {
+            "con": "正码  32",
+            "odds": "3.805",
+            "position": "",
+            "value": "32"
+          },
+          {
+            "con": "正码  33",
+            "odds": "3.805",
+            "position": "",
+            "value": "33"
+          },
+          {
+            "con": "正码  34",
+            "odds": "3.805",
+            "position": "",
+            "value": "34"
+          },
+          {
+            "con": "正码  35",
+            "odds": "3.805",
+            "position": "",
+            "value": "35"
+          },
+          {
+            "con": "正码 36",
+            "odds": "3.805",
+            "position": "",
+            "value": "36"
+          },
+          {
+            "con": "正码  37",
+            "odds": "3.805",
+            "position": "",
+            "value": "37"
+          },
+          {
+            "con": "正码  38",
+            "odds": "3.805",
+            "position": "",
+            "value": "38"
+          },
+          {
+            "con": "正码  39",
+            "odds": "3.805",
+            "position": "",
+            "value": "39"
+          },
+          {
+            "con": "正码  40",
+            "odds": "3.805",
+            "position": "",
+            "value": "40"
+          },
+          {
+            "con": "正码  41",
+            "odds": "3.805",
+            "position": "",
+            "value": "41"
+          },
+          {
+            "con": "正码 42",
+            "odds": "3.805",
+            "position": "",
+            "value": "42"
+          },
+          {
+            "con": "正码  43",
+            "odds": "3.805",
+            "position": "",
+            "value": "43"
+          },
+          {
+            "con": "正码  44",
+            "odds": "3.805",
+            "position": "",
+            "value": "44"
+          },
+          {
+            "con": "正码 45",
+            "odds": "3.805",
+            "position": "",
+            "value": "45"
+          },
+          {
+            "con": "正码  46",
+            "odds": "3.805",
+            "position": "",
+            "value": "46"
+          },
+          {
+            "con": "正码  47",
+            "odds": "3.805",
+            "position": "",
+            "value": "47"
+          },
+          {
+            "con": "正码  48",
+            "odds": "3.805",
+            "position": "",
+            "value": "48"
+          },
+          {
+            "con": "正码  49",
+            "odds": "3.805",
+            "position": "",
+            "value": "49"
+          },
+          {
+            "con": "正码  50",
+            "odds": "3.805",
+            "position": "",
+            "value": "50"
+          },
+          {
+            "con": "正码 51",
+            "odds": "3.805",
+            "position": "",
+            "value": "51"
+          },
+          {
+            "con": "正码  52",
+            "odds": "3.805",
+            "position": "",
+            "value": "52"
+          },
+          {
+            "con": "正码  53",
+            "odds": "3.805",
+            "position": "",
+            "value": "53"
+          },
+          {
+            "con": "正码  54",
+            "odds": "3.805",
+            "position": "",
+            "value": "54"
+          },
+          {
+            "con": "正码  55",
+            "odds": "3.805",
+            "position": "",
+            "value": "55"
+          },
+          {
+            "con": "正码  56",
+            "odds": "3.805",
+            "position": "",
+            "value": "56"
+          },
+          {
+            "con": "正码  57",
+            "odds": "3.805",
+            "position": "",
+            "value": "57"
+          },
+          {
+            "con": "正码 58",
+            "odds": "3.805",
+            "position": "",
+            "value": "58"
+          },
+          {
+            "con": "正码  59",
+            "odds": "3.805",
+            "position": "",
+            "value": "59"
+          },
+          {
+            "con": "正码  60",
+            "odds": "3.805",
+            "position": "",
+            "value": "60"
+          },
+          {
+            "con": "正码  61",
+            "odds": "3.805",
+            "position": "",
+            "value": "61"
+          },
+          {
+            "con": "正码 62",
+            "odds": "3.805",
+            "position": "",
+            "value": "62"
+          },
+          {
+            "con": "正码  63",
+            "odds": "3.805",
+            "position": "",
+            "value": "63"
+          },
+          {
+            "con": "正码  64",
+            "odds": "3.805",
+            "position": "",
+            "value": "64"
+          },
+          {
+            "con": "正码  65",
+            "odds": "3.805",
+            "position": "",
+            "value": "65"
+          },
+          {
+            "con": "正码  66",
+            "odds": "3.805",
+            "position": "",
+            "value": "66"
+          },
+          {
+            "con": "正码  67",
+            "odds": "3.805",
+            "position": "",
+            "value": "67"
+          },
+          {
+            "con": "正码  68",
+            "odds": "3.805",
+            "position": "",
+            "value": "68"
+          },
+          {
+            "con": "正码  69",
+            "odds": "3.805",
+            "position": "",
+            "value": "69"
+          },
+          {
+            "con": "正码  70",
+            "odds": "3.805",
+            "position": "",
+            "value": "70"
+          },
+          {
+            "con": "正码 71",
+            "odds": "3.805",
+            "position": "",
+            "value": "71"
+          },
+          {
+            "con": "正码  72",
+            "odds": "3.805",
+            "position": "",
+            "value": "72"
+          },
+          {
+            "con": "正码  73",
+            "odds": "3.805",
+            "position": "",
+            "value": "73"
+          },
+          {
+            "con": "正码  74",
+            "odds": "3.805",
+            "position": "",
+            "value": "74"
+          },
+          {
+            "con": "正码  75",
+            "odds": "3.805",
+            "position": "",
+            "value": "75"
+          },
+          {
+            "con": "正码  76",
+            "odds": "3.805",
+            "position": "",
+            "value": "76"
+          },
+          {
+            "con": "正码  77",
+            "odds": "3.805",
+            "position": "",
+            "value": "77"
+          },
+          {
+            "con": "正码  78",
+            "odds": "3.805",
+            "position": "",
+            "value": "78"
+          },
+          {
+            "con": "正码  79",
+            "odds": "3.805",
+            "position": "",
+            "value": "79"
+          },
+          {
+            "con": "正码  80",
+            "odds": "3.805",
+            "position": "",
+            "value": "80"
+          }
+        ],
+        "title": "正码"
+      }
+    ],
+    "tabs": [],
+    "title": "正码"
+  },
+  {
+    "id": "leftnav_2",
+    "sections": [],
+    "tabs": [],
+    "title": ""
+  }
+]
