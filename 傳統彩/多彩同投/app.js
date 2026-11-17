@@ -7,7 +7,7 @@
     { id: 'x115', label: '11选5', game: '极速十一选五', issue: '721560', close: '00:58', play: '两面盘', kind: 'odds', values: ['大', '小', '单', '双'], amount: 10 },
     { id: 'k8', label: '快乐8', game: '极速快乐八', issue: '319205', close: '02:10', play: '两面盘', kind: 'number', values: Array.from({ length: 80 }, (_, i) => String(i + 1)), amount: 10 },
     { id: 'k3', label: '快3', game: '极速快三', issue: '680231', close: '00:27', play: '三军、大小', kind: 'odds', values: ['大', '小', '单', '双'], amount: 10 },
-    { id: '3d', label: '3D', game: '极速3D', issue: '452189', close: '03:40', play: '正确号码', kind: 'digits', values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], amount: 10 },
+    { id: '3d', label: '3D', game: '极速3D', issue: '452189', close: '03:40', play: '定位', kind: 'digits', values: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], amount: 10 },
     { id: 'pcdd', label: 'PC蛋蛋', game: '极速PC蛋蛋', issue: '1894230', close: '00:49', play: '主势盘', kind: 'odds', values: ['大', '小', '单', '双'], amount: 10 },
   ];
   const catalog = {
@@ -122,7 +122,7 @@
     const tripleOdds = src[11].sections[0].items[0].odds;
     playCatalog.ssc = [
       refPlay('两面盘', src[0]),
-      groupedTabs('正确号码', fiveBallNames, numeric),
+      groupedTabs('定位', fiveBallNames, numeric),
       refPlay('前中后', src[6]),
       { name: '组合/定位', kind: 'digits', grouped: true, values: [], sections: [
         ...[7, 8, 9].map(index => sscGroupedSection(src[index])),
@@ -138,7 +138,7 @@
     const src = sourceReference.klc;
     playCatalog.klc = [
       refPlay('两面盘', src[0]),
-      groupedTabs('正确号码', ['正码', ...eightBallNames], [refItems(src[1].sections[0]), ...src.slice(2, 10).map(group => refItems(group.sections[0]))]),
+      groupedTabs('定位', ['正码', ...eightBallNames], [refItems(src[1].sections[0]), ...src.slice(2, 10).map(group => refItems(group.sections[0]))]),
       groupedTabs('方位/中发白', eightBallNames, src.slice(2, 10).map(group => refItems(group.sections[2]).map(item => ({ ...item, hint: klcDirectionNumbers[item.value] }))), 'odds'),
       { name: '任选', kind: 'number', grouped: true, values: [], sections: [10, 12, 14, 15].map(index => ({ title: src[index].title, items: refItems(src[index].sections[0]) })) },
       ...[11, 13].map(index => refPlay(src[index].title, src[index], 'number')),
@@ -150,7 +150,7 @@
     const directThree = refVariantItems('x115', src[8], '前三');
     playCatalog.x115 = [
       refPlay('两面盘', src[0]),
-      groupedTabs('正确号码', fiveBallNames, src.slice(1, 6).map(group => refItems(group.sections[0]))),
+      groupedTabs('定位', fiveBallNames, src.slice(1, 6).map(group => refItems(group.sections[0]))),
       refTabs('任选', src[6], 'number', 'x115'), refTabs('组选', src[7], 'number', 'x115'),
       groupedTabs('直选', ['前二', '前三'], [directTwo.filter(item => item.position !== '第三球'), directThree], 'digits'),
     ];
@@ -159,12 +159,12 @@
     const src = sourceReference.pk10;
     playCatalog.pk10 = [
       { name: '两面盘', kind: 'odds', values: sscSides, sections: [{ title: '两面盘', tabs: ['冠/亚军和', ...posNames], items: refItems(src[0].sections[0]), tabItems: Object.fromEntries(src[0].sections.map((section, index) => [[ '冠/亚军和', ...posNames ][index], refItems(section)])) }] },
-      groupedTabs('正确号码', ['冠亚和', ...posNames], src.slice(1).map(group => refItems(group.sections[0], item => /^\d+$/.test(item.value)))),
+      groupedTabs('定位', ['冠亚和', ...posNames], src.slice(1).map(group => refItems(group.sections[0], item => /^\d+$/.test(item.value)))),
     ];
   }
   if (sourceReference.k8) {
     const src = sourceReference.k8;
-    playCatalog.k8 = [refPlay('两面盘', src[0]), refPlay('正确号码', src[1], 'number')];
+    playCatalog.k8 = [refPlay('两面盘', src[0]), refPlay('定位', src[1], 'number')];
   }
   if (sourceReference.k3) {
     playCatalog.k3 = sourceReference.k3[0].sections.map(section => singleSectionPlay(section.title, 'odds', refItems(section)));
@@ -176,7 +176,7 @@
     const sumSections = pairs.flatMap((pair, index) => src[10].sections.map((section, sectionIndex) => ({ title: `${src[10].tabs[index]}${sectionIndex ? '和数尾数' : '和数'}`, label: `${src[10].tabs[index]}·${sectionIndex ? '尾数' : '和值'}`, items: refVariantItems('3d', src[10], src[10].tabs[index], sectionIndex) })));
     playCatalog['3d'] = [
       { name: '两面盘', kind: 'odds', values: sscSides, sections: threeDNames.map((title, index) => ({ title, items: refItems(src[index].sections[0], item => !/^\d+$/.test(item.value)) })) },
-      groupedTabs('正确号码', threeDNames, src.slice(0, 3).map(group => refItems(group.sections[0], item => /^\d+$/.test(item.value))), 'digits'),
+      groupedTabs('定位', threeDNames, src.slice(0, 3).map(group => refItems(group.sections[0], item => /^\d+$/.test(item.value))), 'digits'),
       refPlay('整合', src[3]), refPlay('主势盘', src[4]), refPlay('一字组合', src[5]),
       refPlay('二字组合', src[6], 'digits'), refPlay('三字组合', src[7], 'digits'),
       groupedTabs('二字定位', src[8].tabs, pairs.map(pair => positionItems(pair, positionOdds)), 'digits'),
@@ -227,9 +227,9 @@
     }
     return values;
   }
-  const demoHistory = g => Array.from({ length: 7 }, (_, index) => ({ issue: String(Number(g.issue) - index - 1), values: demoResult(g.id, Number(g.issue) - index - 1, index, g.game) }));
-  const newCardState = (base, key, game = base.game) => ({ ...base, key, game, selected: [], expanded: false, historyExpanded: false, remaining: parseClock(base.close), closedFor: 0, betIssue: base.issue, remindedIssue: '', history: demoHistory({ ...base, game }) });
-  const cards = groups.map((g, i) => newCardState(g, `${g.id}-${i}`));
+  const demoHistory = g => Array.from({ length: 10 }, (_, index) => ({ issue: String(Number(g.issue) - index - 1), time: new Date(Date.now() - (index + 1) * Math.max(parseClock(g.close), 60) * 1000).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: false }), values: demoResult(g.id, Number(g.issue) - index - 1, index, g.game) }));
+  const newCardState = (base, key, game = base.game) => ({ ...base, key, game, selected: [], expanded: false, compact: true, remaining: parseClock(base.close), closedFor: 0, betIssue: base.issue, remindedIssue: '', history: demoHistory({ ...base, game }) });
+  const cards = groups.map((g, i) => ({ ...newCardState(g, `${g.id}-${i}`), compact: i !== 0 }));
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const formatMoney = n => Number(n).toFixed(2);
@@ -346,7 +346,7 @@
   const cardBetCount = g => playCatalog[g.id].reduce((sum, play) => sum + playBetCount(g, play.name), 0);
   const isClosingSoon = g => g.remaining > 0 && g.remaining <= 30 && g.betIssue === g.issue;
   const isBetClosed = g => g.remaining === 0 || g.betIssue !== g.issue;
-  const clockLabel = g => g.remaining === 0 ? '已封盘' : g.betIssue !== g.issue && g.selected.length ? '原期已封盘' : formatClock(g.remaining);
+  const clockLabel = g => g.remaining === 0 ? '已封盘' : formatClock(g.remaining);
   function hasUnformedLianSelection(g) {
     if (g.id === 'pcdd') {
       const bao = g.selected.filter(value => value.startsWith('主势盘-包三|')).length;
@@ -382,13 +382,14 @@
       return values.map(value => `<span class="draw-die" role="img" aria-label="${value}点">${dicePips[value].map(position => `<i class="pip pip-${position}"></i>`).join('')}</span>`).join('');
     }
     if (g.id === '3d') return values.map(value => `<span class="draw-ball draw-3d">${value}</span>`).join('');
-    return values.map((value, index) => `${g.id === 'lotto' && index === 6 ? '<span class="draw-plus" aria-hidden="true">＋</span>' : ''}<span class="draw-ball ${g.id === 'lotto' ? lottoColor(value) : ''} ${g.id === 'lotto' && index === 6 ? 'draw-special' : ''} ${g.id === 'pk10' ? `race-${index % 5}` : ''}">${String(value).padStart(['lotto', 'pk10', 'k8', 'klc', 'x115'].includes(g.id) ? 2 : 1, '0')}</span>`).join('');
+    return values.map((value, index) => `${g.id === 'lotto' && index === 6 ? '<span class="draw-plus" aria-hidden="true">＋</span>' : ''}<span class="draw-ball ${g.id === 'lotto' ? lottoColor(value) : ''} ${g.id === 'lotto' && index === 6 ? 'draw-special' : ''} ${g.id === 'pk10' ? `race-number-${value}` : ''}">${String(value).padStart(['lotto', 'pk10', 'k8', 'klc', 'x115'].includes(g.id) ? 2 : 1, '0')}</span>`).join('');
   }
 
   const resultRule = { lotto: '6 正码 ＋ 1 特别号', pk10: '第 1 至第 10 名', ssc: '五球', klc: '8 个号码', x115: '5 个号码', k8: '20 个号码', k3: '3 颗骰子', '3d': '3 个号码', pcdd: '三码和值' };
   function historyMarkup(g) {
-    return `<div class="history-panel" id="history-${esc(g.key)}" ${g.historyExpanded ? '' : 'hidden'}><div class="history-panel-head"><strong>近 7 期开奖</strong><span>原型示意数据</span></div><div class="history-list">${g.history.map(row => `<div class="history-item"><span class="history-issue">${esc(row.issue)} 期</span><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g, row.values)}</div></div>`).join('')}</div></div>`;
+    return `<div class="history-backdrop" data-history-backdrop><section class="history-panel" data-history-panel="${esc(g.key)}" role="dialog" aria-modal="true" aria-label="${esc(g.game)}近期开奖"><div class="history-panel-head"><div><small>${esc(g.game)} · 原型示意</small><strong>近 10 期开奖</strong></div><button type="button" data-close-history aria-label="关闭开奖记录">×</button></div><div class="history-columns"><span>期号 / 时间</span><span>开奖号码</span></div><div class="history-list">${g.history.map(row => `<div class="history-item"><div class="history-issue"><strong>${esc(row.issue)} 期</strong><small>${esc(row.time)}</small></div><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g, row.values)}</div></div>`).join('')}</div><p class="history-note">原型示意数据 · 正式开奖结果请以开奖接口为准</p></section></div>`;
   }
+  const historyButtonMarkup = g => `<button type="button" class="history-toggle" data-history="${esc(g.key)}" aria-label="查看${esc(g.game)}近期开奖记录"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M7 3.5v3M17 3.5v3M7 10.5h10M8 14h3M14 14h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>开奖历史</span></button>`;
 
   function lianPairMarkup(g, section, tab, mode) {
     return `<div class="lian-pair-board">${['A', 'B'].map(side => {
@@ -491,6 +492,11 @@
   function cardMarkup(g) {
     const picked = g.selected.length;
     const betCount = cardBetCount(g);
+    if (g.compact) return `<article class="lottery-card compact-card ${picked ? 'has-pick' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && picked ? 'bet-closed' : ''}" id="group-${g.id}" data-card="${esc(g.key)}">
+      <div class="compact-head"><span class="group-logo-placeholder" role="img" aria-label="${esc(groupNames[g.id])}图片额外设计"><span>图片<br>额外设计</span></span><div class="compact-title"><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i>·</i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div><button type="button" class="remove-game" data-remove="${esc(g.key)}" aria-label="移除${esc(g.game)}彩种">×</button></div>
+      <div class="compact-draw"><span>上期开奖 <small>示意</small></span><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div>${historyButtonMarkup(g)}</div>
+      <div class="compact-foot"><span class="compact-bet-count">${betCount ? (isBetClosed(g) ? `已封盘 · ${betCount} 注不可提交` : `${betCount} 注待投注 · ¥${formatMoney(betCount * g.amount)}`) : '尚未选择投注项'}</span><button type="button" data-open-card="${esc(g.key)}">展开投注 <span aria-hidden="true">↗</span></button></div>
+    </article>`;
     const play = playDefinition(g);
     const displayedValues = play.values.length > 20 && !g.expanded ? play.values.slice(0, 20) : play.values;
     const options = displayedValues.map((value, i) => {
@@ -512,7 +518,7 @@
     const canExpand = play.sections ? currentItems?.length > itemLimit : play.values.length > 20;
     const more = canExpand ? `<button type="button" class="show-more" data-expand="${esc(g.key)}">${g.expanded ? '收起投注区' : '查看完整投注区'} <span>${g.expanded ? '⌃' : '⌄'}</span></button>` : '';
     const subplayColumns = subplayColumnCount(g, subplays);
-    const subplaySwitch = subplays.length > 1 ? `<div class="subplay-switch"><div class="subplay-caption">次玩法</div><div class="subplay-grid cols-${subplayColumns} ${g.id === 'pk10' && subplays.length === 11 ? 'featured-first' : ''}" role="group" aria-label="${esc(g.game)}次玩法">${subplays.map(choice => { const saved = subplayPickCount(g, choice); return `<button type="button" data-subplay-button="${esc(g.key)}" data-subplay-key="${esc(choice.key)}" class="${choice.key === currentSubplay.key ? 'active' : ''}" aria-pressed="${choice.key === currentSubplay.key}">${esc(choice.label)}${saved ? `<b>${saved}</b>` : ''}</button>`; }).join('')}</div></div>` : '';
+    const subplaySwitch = subplays.length > 1 ? `<div class="subplay-switch"><div class="subplay-caption">次玩法${subplays.length > 6 ? '<small>左右滑动切换</small>' : ''}</div><div class="subplay-grid cols-${subplayColumns} ${subplays.length > 6 ? 'scrollable' : ''} ${g.id === 'pk10' && subplays.length === 11 ? 'featured-first' : ''}" role="group" aria-label="${esc(g.game)}次玩法">${subplays.map(choice => { const saved = subplayPickCount(g, choice); return `<button type="button" data-subplay-button="${esc(g.key)}" data-subplay-key="${esc(choice.key)}" class="${choice.key === currentSubplay.key ? 'active' : ''}" aria-pressed="${choice.key === currentSubplay.key}">${esc(choice.label)}${saved ? `<b>${saved}</b>` : ''}</button>`; }).join('')}</div></div>` : '';
     const board = play.sections ? `<div class="source-betting-board">${currentSubplay ? [currentSubplay].map(({ section, sectionIndex }) => {
       const activeTab = selectedInnerTab;
       const allItems = section.tabItems?.[activeTab] || section.items;
@@ -520,7 +526,7 @@
       const items = allItems.length > visibleLimit && !g.expanded ? allItems.slice(0, visibleLimit) : allItems;
       const lianMode = g.id === 'lotto' && g.play === '连码' ? lianModeFor(g, activeTab) : '';
       const pairMode = lianMode.endsWith('对碰');
-      const rankBoard = g.id === 'pk10' && g.play === '正确号码';
+      const rankBoard = g.id === 'pk10' && g.play === '定位';
       const baoBoard = g.id === 'pcdd' && section.title === '包三';
       const x115DirectBoard = g.id === 'x115' && g.play === '直选';
       const sscPositionBoard = g.id === 'ssc' && g.play === '组合/定位' && ['二字定位', '三字定位'].includes(section.title);
@@ -550,8 +556,7 @@
         <div class="card-head-main"><div class="card-title"><span class="group-logo-placeholder" role="img" aria-label="${esc(groupNames[g.id])}图片额外设计"><span>图片<br>额外设计</span></span><div><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i></i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div></div>
           <button type="button" class="remove-game" data-remove="${esc(g.key)}" aria-label="移除${esc(g.game)}彩种" title="移除彩种">×</button>
           <div class="card-head-actions"><button type="button" class="change-game" data-change="${esc(g.key)}" aria-label="更换${esc(g.game)}">更换彩种</button><button type="button" class="reset-picks" data-reset="${esc(g.key)}" aria-label="重置${esc(g.game)}选号" ${picked ? '' : 'disabled'}>重置选号</button></div></div>
-        <div class="draw-row"><div class="draw-heading"><span>上期开奖 <small>示意</small></span><span>${esc(resultRule[g.id])}</span></div><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div><button type="button" class="history-toggle" data-history="${esc(g.key)}" aria-expanded="${g.historyExpanded}" aria-controls="history-${esc(g.key)}"><span>近 7 期开奖</span><span aria-hidden="true">${g.historyExpanded ? '收起 ↑' : '查看 ↓'}</span></button></div>
-        ${historyMarkup(g)}
+        <div class="draw-row"><div class="draw-heading"><span>上期开奖 <small>示意</small></span><span>${esc(resultRule[g.id])}</span>${historyButtonMarkup(g)}</div><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div></div>
       </header>
       <div class="play-row"><div class="play-row-main"><span class="play-label">目前玩法</span><select class="play-select" data-play="${esc(g.key)}" aria-label="${esc(g.game)}玩法">${playOptions}</select></div><span class="play-retained">${savedPlayCount ? `已选 ${savedPlayCount} 个玩法 · ${betCount} 注` : ''}</span></div>
       ${subplaySwitch}
@@ -588,6 +593,12 @@
       const node = document.querySelector(`[data-card="${CSS.escape(g.key)}"]`);
       if (!node) return;
       const picked = g.selected.length;
+      if (g.compact) {
+        node.querySelector('.compact-bet-count').textContent = bets ? (isBetClosed(g) ? `已封盘 · ${bets} 注不可提交` : `${bets} 注待投注 · ¥${formatMoney(bets * g.amount)}`) : '尚未选择投注项';
+        node.classList.toggle('has-pick', picked > 0);
+        node.classList.toggle('bet-closed', isBetClosed(g) && picked > 0);
+        return;
+      }
       const status = node.querySelector('.card-count');
       status.textContent = picked ? `${isBetClosed(g) ? '已封盘 · ' : ''}已选 ${picked} 项 · ${bets} 注` : '尚未选择';
       status.classList.toggle('muted', !picked);
@@ -609,6 +620,12 @@
     updateNavOverflow();
     $('#cards').innerHTML = cards.length ? cards.map(cardMarkup).join('') : '<div class="empty-desk"><strong>投注桌目前是空的</strong><p>加入彩种后，就能在这里组合投注。</p><button type="button" data-add-empty>添加彩种</button></div>';
     totals();
+  }
+  function activateCard(key) {
+    if (!cards.some(card => card.key === key)) return;
+    cards.forEach(card => { card.compact = card.key !== key; });
+    render();
+    document.querySelector(`[data-card="${CSS.escape(key)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   function refreshCard(g, focusSelector) {
     const node = document.querySelector(`[data-card="${CSS.escape(g.key)}"]`);
@@ -641,6 +658,8 @@
     if (isAdd) {
       const base = groups.find(g => g.id === nextGroup);
       const card = newCardState(base, `${base.id}-${Date.now()}`, nextGame);
+      cards.forEach(item => { item.compact = true; });
+      card.compact = false;
       cards.push(card);
       closeModal();
       render();
@@ -653,7 +672,7 @@
     if (current.game === nextGame) { closeModal(); return; }
     const apply = () => {
       const base = groups.find(g => g.id === nextGroup);
-      Object.assign(current, newCardState(base, targetKey, nextGame));
+      Object.assign(current, { ...newCardState(base, targetKey, nextGame), compact: false });
       closeModal();
       render();
       toast(`已更换为${nextGame}`);
@@ -708,7 +727,7 @@
     if (!g) return;
     g.remindedIssue = g.issue;
     const count = cardBetCount(g);
-    showModal(`<div class="closing-alert"><span class="closing-alert-icon">15</span><small>即将封盘</small><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期还有 <b data-alert-countdown="${esc(g.key)}">${formatClock(g.remaining)}</b>，你有 <strong>${count} 注待投注</strong>。请尽快确认，封盘后该期不能送出。</p><div class="closing-alert-actions"><button type="button" class="secondary-button" data-reminder-jump="${esc(g.key)}">跳往彩种</button><button type="button" class="primary-button" data-reminder-review>查看并送单</button></div><button type="button" class="reminder-cancel" data-close>稍后处理</button></div>`);
+    showModal(`<div class="closing-alert" data-alert-card="${esc(g.key)}"><span class="closing-alert-icon">15</span><small>即将封盘</small><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期还有 <b data-alert-countdown="${esc(g.key)}">${formatClock(g.remaining)}</b>，你有 <strong>${count} 注待投注</strong>。请尽快确认，封盘后该期不能送出。</p><div class="closing-alert-actions"><button type="button" class="secondary-button" data-reminder-jump="${esc(g.key)}">跳往彩种</button><button type="button" class="primary-button" data-reminder-review>查看并送单</button></div><button type="button" class="reminder-cancel" data-close>稍后处理</button></div>`);
   }
 
   document.addEventListener('click', e => {
@@ -719,19 +738,20 @@
     const historyButton = e.target.closest('[data-history]');
     if (historyButton) {
       const g = cards.find(card => card.key === historyButton.dataset.history);
-      if (g) {
-        g.historyExpanded = !g.historyExpanded;
-        historyButton.setAttribute('aria-expanded', String(g.historyExpanded));
-        historyButton.lastElementChild.textContent = g.historyExpanded ? '收起 ↑' : '查看 ↓';
-        document.getElementById(`history-${g.key}`).hidden = !g.historyExpanded;
-      }
+      if (g) $('#history-root').innerHTML = historyMarkup(g);
       return;
     }
+    if (e.target.closest('[data-close-history]') || e.target.matches('[data-history-backdrop]')) {
+      $('#history-root').innerHTML = '';
+      return;
+    }
+    const openCard = e.target.closest('[data-open-card]');
+    if (openCard) { activateCard(openCard.dataset.openCard); return; }
     const reminderJump = e.target.closest('[data-reminder-jump]');
     if (reminderJump) {
       const key = reminderJump.dataset.reminderJump;
       closeModal();
-      document.querySelector(`[data-card="${CSS.escape(key)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      activateCard(key);
       return;
     }
     if (e.target.closest('[data-reminder-review]')) { submitSummary(); return; }
@@ -739,12 +759,12 @@
       const cardNode = e.target.closest('[data-card]');
       const g = cards.find(card => card.key === cardNode?.dataset.card);
       if (g && isBetClosed(g)) {
-        toast(g.betIssue !== g.issue ? '原期已封盘，请重置选号后投注新期' : '当前彩种已封盘，请等待下一期');
+        toast('当前彩种已封盘，请等待下一期');
         return;
       }
     }
     const jump = e.target.closest('[data-jump]');
-    if (jump) document.querySelector(`[data-card="${CSS.escape(jump.dataset.jump)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (jump) { activateCard(jump.dataset.jump); return; }
 
     const baoNumber = e.target.closest('[data-bao-number]');
     if (baoNumber) {
@@ -945,7 +965,7 @@
       const current = cards.find(c => c.key === data.targetKey);
       if (current) {
         const base = groups.find(g => g.id === data.nextGroup);
-        Object.assign(current, newCardState(base, current.key, data.nextGame));
+        Object.assign(current, { ...newCardState(base, current.key, data.nextGame), compact: false });
         delete $('#modal-root').dataset.pendingChange;
         closeModal();
         render();
@@ -999,21 +1019,37 @@
   render();
   updateBackToTop();
   setInterval(() => {
-    let newIssue = false;
+    const newIssueKeys = [];
+    let clearedBets = false;
     let becameClosed = false;
     cards.forEach(g => {
       if (g.remaining > 0) { g.remaining -= 1; if (g.remaining === 0) becameClosed = true; return; }
       g.closedFor += 1;
       if (g.closedFor < 12) return;
-      g.history.unshift({ issue: g.issue, values: demoResult(g.id, g.issue, 8, g.game) });
-      g.history = g.history.slice(0, 7);
+      g.history.unshift({ issue: g.issue, time: new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: false }), values: demoResult(g.id, g.issue, 8, g.game) });
+      g.history = g.history.slice(0, 10);
       g.issue = String(Number(g.issue) + 1);
       g.remaining = parseClock(g.close);
       g.closedFor = 0;
-      if (!g.selected.length) g.betIssue = g.issue;
-      newIssue = true;
+      if (g.selected.length) clearedBets = true;
+      g.selected = [];
+      g.pcddBao = ['', '', ''];
+      g.betIssue = g.issue;
+      g.expanded = false;
+      newIssueKeys.push(g.key);
     });
-    if (newIssue) render();
+    if (newIssueKeys.length) {
+      render();
+      const alertKey = $('#modal-root [data-alert-card]')?.dataset.alertCard;
+      if (alertKey && newIssueKeys.includes(alertKey)) closeModal();
+      else if ($('#modal-root .review-body')) {
+        if (cards.some(g => cardBetCount(g) > 0)) submitSummary();
+        else closeModal();
+      }
+      const historyKey = $('#history-root [data-history-panel]')?.dataset.historyPanel;
+      if (historyKey && newIssueKeys.includes(historyKey)) $('#history-root').innerHTML = historyMarkup(cards.find(g => g.key === historyKey));
+      if (clearedBets) toast('新一期已开盘，上期未送投注已清空');
+    }
     else if (becameClosed) totals();
     document.querySelectorAll('[data-countdown]').forEach(node => {
       const g = cards.find(card => card.key === node.dataset.countdown);

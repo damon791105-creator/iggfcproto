@@ -112,23 +112,30 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .draw-balls-lotto .draw-ball.ball-red { background: #b83d46; color: #fff; }
 .draw-balls-lotto .draw-ball.ball-blue { background: #2764a9; color: #fff; }
 .draw-balls-lotto .draw-ball.ball-green { background: #237a4b; color: #fff; }
-.history-toggle { width: 100%; min-height: 37px; display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding: 0 12px; border: 1px solid color-mix(in srgb, var(--card-accent) 28%, #ead9c5); border-radius: 10px; background: linear-gradient(120deg, #fffefa, var(--card-glow)); color: var(--card-deep); font-size: 12px; font-weight: 650; cursor: pointer; }
-.history-toggle span:last-child { font-size: 11px; font-weight: 550; }
+.history-toggle { flex: none; min-height: 31px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 0 9px; border: 1px solid color-mix(in srgb, var(--card-accent) 36%, #ead9c5); border-radius: 9px; background: linear-gradient(120deg, #fffefa, var(--card-glow)); color: var(--card-deep); font-size: 11px; font-weight: 650; white-space: nowrap; cursor: pointer; }
+.history-toggle svg { width: 15px; height: 15px; }
 .history-toggle:focus-visible { outline: 2px solid var(--card-accent); outline-offset: 2px; }
-.history-panel { padding: 12px 15px 14px; border-top: 1px solid #ecdcca; background: linear-gradient(145deg, #fffcf8, #fff6ec); }
-.history-panel[hidden] { display: none; }
-.history-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; color: #583c2b; font-size: 13px; }
-.history-panel-head span { color: #876b54; font-size: 10px; }
-.history-list { display: grid; gap: 7px; }
-.history-item { display: grid; grid-template-columns: 73px minmax(0, 1fr); align-items: center; gap: 6px; min-height: 38px; padding: 7px 9px; border: 1px solid #edddcc; border-radius: 10px; background: #fffefa; box-shadow: 0 2px 5px #8054310b; }
-.history-issue { color: #684d3a; font-size: 11px; font-weight: 650; font-variant-numeric: tabular-nums; }
-.history-item .draw-balls { margin: 0; gap: 4px; }
+.history-backdrop { position: fixed; inset: 0; z-index: 25; background: #2e201a66; backdrop-filter: blur(3px); }
+.history-panel { position: fixed; top: 117px; bottom: calc(89px + env(safe-area-inset-bottom)); left: 50%; width: min(calc(100vw - 20px), 576px); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #e7c8a7; border-radius: 16px; background: #fffdfa; box-shadow: 0 17px 45px #2f1b1580; transform: translateX(-50%); }
+.history-panel-head { flex: none; min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 11px 15px; background: linear-gradient(105deg, #fff8ed, #ffe5c9); color: #543521; }
+.history-panel-head small { display: block; margin-bottom: 2px; color: #8b6042; font-size: 10px; }
+.history-panel-head strong { font-size: 17px; }
+.history-panel-head button { width: 34px; height: 34px; border: 1px solid #e7c8a7; border-radius: 10px; background: #fffaf4; color: #93502b; font-size: 23px; line-height: 1; }
+.history-columns { flex: none; display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 7px; padding: 8px 12px; border-bottom: 1px solid #f0dfcb; color: #74533c; font-size: 11px; font-weight: 700; }
+.history-list { flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.history-item { display: grid; grid-template-columns: 82px minmax(0, 1fr); align-items: center; gap: 7px; min-height: 52px; padding: 8px 12px; border-bottom: 1px solid #f1e5d8; background: #fffdfa; }
+.history-item:nth-child(even) { background: #fff9f1; }
+.history-issue strong, .history-issue small { display: block; font-variant-numeric: tabular-nums; }
+.history-issue strong { color: #5b402d; font-size: 11px; }
+.history-issue small { margin-top: 3px; color: #a36b48; font-size: 10px; }
+.history-item .draw-balls { margin: 0; gap: 3px; }
 .history-item .draw-ball { width: 21px; height: 21px; font-size: 10px; }
 .history-item .draw-special { width: 23px; height: 23px; }
 .history-item .draw-die { width: 27px; height: 27px; grid-template-columns: repeat(3, 5px); grid-template-rows: repeat(3, 5px); gap: 1px; border-radius: 7px; box-shadow: 0 2px 0 #e7d6c4; }
 .history-item .draw-die .pip { width: 5px; height: 5px; }
 .history-item .draw-formula-digit, .history-item .draw-formula strong { width: 23px; height: 23px; font-size: 11px; }
 .history-item .draw-plus { line-height: 21px; }
+.history-note { flex: none; margin: 0; padding: 9px 13px; border-top: 1px solid #edd8c2; background: #fff6e9; color: #89684f; font-size: 10px; }
 .lottery-card.bet-closed { border-color: #d9bdb0; }
 .lottery-card.bet-closed [data-countdown], .category-nav button.bet-closed [data-countdown] { color: #a33d2a; font-weight: 750; }
 .category-nav button.bet-closed { border-left-color: #ad4c34; }
@@ -527,6 +534,44 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .closing-alert-actions button { min-height: 45px; border-radius: 10px; font-size: 13px; font-weight: 700; }
 .reminder-cancel { width: 100%; margin-top: 7px; padding: 8px; border: 0; background: transparent; color: #877667; font-size: 12px; }
 .toast { background: #4b3528; }
+.compact-card { overflow: hidden; }
+.compact-head { min-height: 72px; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: radial-gradient(circle at 100% -15%, var(--card-glow) 0, transparent 58%), linear-gradient(135deg, #fffefd, #fff9f1); }
+.compact-head .group-logo-placeholder { width: 43px; height: 43px; font-size: 9px; }
+.compact-title { min-width: 0; flex: 1; }
+.compact-title h2 { margin: 0 0 4px; color: #3d2c23; font-size: 16px; font-weight: 650; }
+.compact-title p { margin: 0; color: #725d4e; font-size: 11px; font-variant-numeric: tabular-nums; }
+.compact-title p i { margin: 0 3px; color: #c99d77; font-style: normal; }
+.compact-title p em { color: var(--card-deep); font-style: normal; font-weight: 750; }
+.compact-head .remove-game { width: 34px; height: 34px; margin-left: auto; }
+.compact-draw { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 5px; padding: 8px 14px 10px; border-top: 1px solid #f0e1d0; background: #fffdfa; }
+.compact-draw>span { color: #674d3c; font-size: 11px; font-weight: 650; }
+.compact-draw>span small { color: #967f6b; font-size: 10px; font-weight: 500; }
+.compact-draw .draw-balls { grid-column: 1 / -1; margin-top: 0; }
+.compact-draw .draw-ball { width: 22px; height: 22px; font-size: 10px; }
+.compact-draw .draw-special { width: 25px; height: 25px; }
+.compact-draw .draw-die { width: 30px; height: 30px; grid-template-columns: repeat(3, 5px); grid-template-rows: repeat(3, 5px); gap: 2px; }
+.compact-draw .draw-die .pip { width: 5px; height: 5px; }
+.compact-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 7px 14px; border-top: 1px solid #f0e1d0; background: linear-gradient(90deg, #fffdf8, var(--card-glow)); }
+.compact-bet-count { color: #795d47; font-size: 11px; }
+.compact-card.has-pick .compact-bet-count { color: var(--card-deep); font-weight: 700; }
+.compact-foot button { min-height: 33px; padding: 0 11px; border: 1px solid color-mix(in srgb, var(--card-accent) 42%, #edd5bd); border-radius: 9px; background: #fffdfa; color: var(--card-deep); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.compact-foot button span { margin-left: 3px; }
+.subplay-caption { display: flex; justify-content: space-between; gap: 8px; }
+.subplay-caption small { color: #98745b; font-size: 10px; font-weight: 500; }
+.subplay-grid.scrollable { grid-auto-flow: column; grid-template-columns: none; grid-template-rows: repeat(2, 42px); grid-auto-columns: minmax(103px, 1fr); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; padding-bottom: 3px; }
+.subplay-grid.scrollable::-webkit-scrollbar { display: none; }
+.subplay-grid.scrollable button { scroll-snap-align: start; }
+.subplay-grid.scrollable.featured-first button:first-child { grid-column: auto; }
+.source-play-grid.number-board { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.source-play-grid.number-board .choice { min-height: 61px; gap: 2px; padding: 5px 1px; }
+.source-play-grid.number-board .choice span { width: 31px; height: 31px; font-size: 14px; }
+.source-play-grid.number-board .choice small { font-size: 10px; }
+.draw-balls-pk10 .draw-ball { border-radius: 50%; color: #fff; box-shadow: inset 0 1px 1px #ffffff66, 0 2px 3px #25180f2b; }
+.draw-ball.race-number-1 { background: #d7ae08; }.draw-ball.race-number-2 { background: #2468c0; }.draw-ball.race-number-3 { background: #454b50; }.draw-ball.race-number-4 { background: #db7626; }.draw-ball.race-number-5 { background: #079cac; }
+.draw-ball.race-number-6 { background: #8b56ac; }.draw-ball.race-number-7 { background: #9299a0; }.draw-ball.race-number-8 { background: #cf3f44; }.draw-ball.race-number-9 { background: #8d313c; }.draw-ball.race-number-10 { background: #2b9e4a; }
+.history-panel { width: min(calc(100vw - 8px), 592px); }
+.history-item .draw-ball { width: 23px; height: 23px; font-size: 10px; }
+@media (min-width: 520px) { .source-play-grid.number-board { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .lottery-card:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #fff, 0 4px 0 color-mix(in srgb, var(--card-accent) 30%, #e9d8c5), 0 16px 26px #7d492332, 0 31px 48px #7d492323; }
   .category-nav button:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #fff, 0 6px 13px #9a6b3a24; }
