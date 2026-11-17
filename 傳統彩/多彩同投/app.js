@@ -44,7 +44,8 @@
   const lottoSides = () => ['大', '小', '单', '双', '合单', '合双', '尾大', '尾小', '红波', '蓝波', '绿波'].map((value, i) => ({ value, odds: i === 8 ? '2.85' : i > 8 ? '2.95' : '1.98' }));
   const zodiacStarts = { '鼠': 7, '牛': 6, '虎': 5, '兔': 4, '龙': 3, '蛇': 2, '马': 1, '羊': 12, '猴': 11, '鸡': 10, '狗': 9, '猪': 8 };
   const zodiacNumbers = value => seq(1, 49).filter(n => (Number(n) - zodiacStarts[value]) % 12 === 0).map(n => n.padStart(2, '0'));
-  const zodiacItems = (odds, horseOdds = odds) => zodiacNames.map(value => ({ value, odds: value === '马' ? horseOdds : odds, hint: zodiacNumbers(value).join(' ') }));
+  const zodiacItems = (odds, horseOdds = odds, omitHorse49 = false) => zodiacNames.map(value => ({ value, odds: value === '马' ? horseOdds : odds, hint: zodiacNumbers(value).filter(number => !(omitHorse49 && value === '马' && number === '49')).join(' ') }));
+  const sixZodiacOdds = ['5.81', '3.87', '2.90', '2.32', '1.96'];
   const lottoHintMarkup = hint => `<em class="choice-hint" aria-label="代表号码 ${esc(hint.replace(/\s+/g, '、'))}">${hint.split(/\s+/).filter(Boolean).map(number => `<b class="wave-number ${lottoColor(number)}" aria-hidden="true">${esc(number)}</b>`).join('')}</em>`;
   const elementNumbers = {
     '金': '01 06 11 16 21 26 31 36 41 46', '木': '02 07 12 17 22 27 32 37 42 47',
@@ -60,7 +61,7 @@
     '绿大': '27 28 32 33 38 39 43 44', '绿小': '05 06 11 16 17 21 22',
   };
   const tailItems = odds => seq(0, 9).map((n, i) => ({ value: `${n}尾`, odds: Array.isArray(odds) ? odds[i] : odds }));
-  const tabbedCombo = (name, tabs, values, odds, kind = 'number') => { const items = value => values === zodiacNames ? zodiacItems(value) : asOptions(values, value); return { name, kind, values, sections: [{ title: name, tabs, items: items(odds[0]), tabItems: Object.fromEntries(tabs.map((tab, i) => [tab, items(odds[i])])) }] }; };
+  const tabbedCombo = (name, tabs, values, odds, kind = 'number', horseOdds = []) => { const items = (value, horseValue = value) => values === zodiacNames ? zodiacItems(value, horseValue) : asOptions(values, value); return { name, kind, values, sections: [{ title: name, tabs, items: items(odds[0], horseOdds[0]), tabItems: Object.fromEntries(tabs.map((tab, i) => [tab, items(odds[i], horseOdds[i])])) }] }; };
   const singleSectionPlay = (name, kind, items) => ({ name, kind, values: items.map(item => String(item.value)), sections: [{ title: name, items }] });
   const playCatalog = {
     lotto: [
@@ -74,9 +75,9 @@
       { name: '五行', kind: 'odds', values: ['金', '木', '水', '火', '土'], sections: [{ title: '五行', items: ['金', '木', '水', '火', '土'].map((value, i) => ({ value, odds: i === 4 ? '4.85' : '4.70', hint: elementNumbers[value] })) }] },
       { name: '半波', kind: 'odds', values: ['红单', '红双', '红大', '红小', '蓝单', '蓝双', '蓝大', '蓝小', '绿单', '绿双', '绿大', '绿小'], sections: [{ title: '半波', items: ['红单', '红双', '红大', '红小', '蓝单', '蓝双', '蓝大', '蓝小', '绿单', '绿双', '绿大', '绿小'].map((value, i) => ({ value, odds: ['5.70', '5.14', '6.60', '4.60', '5.70', '5.70', '5.14', '6.60', '5.70', '6.60', '5.32', '6.60'][i], hint: halfWaveNumbers[value] })) }] },
       { name: '七码', kind: 'odds', values: ['单0', '双0', '大0', '小0'], sections: ['单', '双', '大', '小'].map((type, i) => ({ title: `七码${type}`, items: seq(0, 7).map((n, j) => ({ value: `${type}${n}`, odds: (i % 2 === 0 ? ['230', '24.5', '6.58', '3.38', '3.18', '5.58', '18.9', '168'] : ['168', '18.9', '5.58', '3.18', '3.38', '6.58', '24.5', '230'])[j] })) })) },
-      { name: '六肖', kind: 'odds', values: zodiacNames, sections: [{ title: '六肖', tabs: ['二肖', '三肖', '四肖', '五肖', '六肖'], items: zodiacItems('5.81'), tabItems: Object.fromEntries(['二肖', '三肖', '四肖', '五肖', '六肖'].map((tab, i) => [tab, zodiacItems(['5.81', '3.87', '2.90', '2.32', '1.96'][i])])) }] },
+      { name: '六肖', kind: 'odds', values: zodiacNames, sections: [{ title: '六肖', tabs: ['二肖', '三肖', '四肖', '五肖', '六肖'], items: zodiacItems(sixZodiacOdds[0], sixZodiacOdds[0], true), tabItems: Object.fromEntries(['二肖', '三肖', '四肖', '五肖', '六肖'].map((tab, i) => [tab, zodiacItems(sixZodiacOdds[i], sixZodiacOdds[i], true)])) }] },
       { name: '一肖尾数', kind: 'odds', values: zodiacNames, sections: [{ title: '一肖尾数', tabs: ['一肖', '一肖不中', '尾数', '尾数不中'], items: zodiacItems('2.075', '1.80'), tabItems: { '一肖': zodiacItems('2.075', '1.80'), '一肖不中': zodiacItems('1.85', '2.19'), '尾数': tailItems(['2.07', ...Array(9).fill('1.77')]), '尾数不中': tailItems(['1.77', ...Array(9).fill('2.07')]) } }] },
-      tabbedCombo('生肖连', ['二肖连[中]', '三肖连[中]', '四肖连[中]', '五肖连[中]', '二肖连[不中]', '三肖连[不中]', '四肖连[不中]', '五肖连[不中]'], zodiacNames, ['4.20', '10.60', '30.70', '108', '3.60', '8.00', '20.00', '30.00'], 'odds'),
+      tabbedCombo('生肖连', ['二肖连[中]', '三肖连[中]', '四肖连[中]', '五肖连[中]', '二肖连[不中]', '三肖连[不中]', '四肖连[不中]', '五肖连[不中]'], zodiacNames, ['4.20', '10.60', '30.70', '108', '3.60', '8.00', '20.00', '30.00'], 'odds', ['3.60', '9.50', '27', '89', '3.60', '8.00', '20.00', '30.00']),
       tabbedCombo('尾数连', ['二尾连[中]', '三尾连[中]', '四尾连[中]', '二尾连[不中]', '三尾连[不中]', '四尾连[不中]'], seq(0, 9).map(n => `${n}尾`), ['3.00', '6.95', '15.50', '5.00', '15.00', '50.00'], 'odds'),
       tabbedCombo('不中', ['五不中', '六不中', '七不中', '八不中', '九不中', '十不中'], seq(1, 49), ['2.10', '2.50', '3.00', '3.60', '4.30', '—']),
       tabbedCombo('多选中一', ['五选中一', '六选中一', '七选中一', '八选中一', '九选中一', '十选中一'], seq(1, 49), ['2.35', '—', '—', '—', '—', '—']),
@@ -235,7 +236,7 @@
   const formatMoney = n => Number(n).toFixed(2);
   const lianSizes = { '二全中': 2, '二中特': 2, '特串': 2, '三中二': 3, '三全中': 3 };
   const lianModes = ['复式', '拖头', '生肖对碰', '尾数对碰', '生尾对碰', '任意对碰'];
-  const lianModesFor = tab => ['二中特', '特串'].includes(tab) ? lianModes : lianModes.slice(0, 2);
+  const lianModesFor = tab => ['二全中', '二中特', '特串'].includes(tab) ? lianModes : lianModes.slice(0, 2);
   const lianModeFor = (g, tab) => lianModesFor(tab).includes(g.lianModes?.[tab]) ? g.lianModes[tab] : '复式';
   const lianRoleFor = (g, tab) => g.lianRoles?.[tab] || '头';
   const zodiacFirst = zodiacStarts;
@@ -445,7 +446,8 @@
       const active = mode === '复式' ? g.selected.includes(`${g.play}-${section.title}|${tab}|复式|${value}`) : headPicked || dragPicked;
       const token = `${section.title}|${tab}|${mode}|${mode === '拖头' ? `${role}|` : ''}${value}`;
       const numeric = /^\d+$/.test(value);
-      return `<button type="button" class="choice ${numeric ? 'number-choice' : 'odds-choice'} ${item.hint ? 'has-hint' : ''} ${active ? 'picked' : ''} ${headPicked ? 'head-pick' : ''} ${dragPicked ? 'drag-pick' : ''}" data-pick="${esc(g.key)}" data-value="${esc(token)}" data-combo-choice="${esc(value)}" data-combo-tab="${esc(tab)}" data-combo-mode-value="${mode}" aria-pressed="${active}"><span class="${numeric ? lottoColor(value) : ''}">${esc(value)}</span>${item.hint ? lottoHintMarkup(item.hint) : ''}<small>${esc(item.odds)}</small>${headPicked || dragPicked ? `<b class="lian-badge">${headPicked ? '头' : '拖'}</b>` : ''}</button>`;
+      const odds = item.odds && !/^[-—–]+$/.test(String(item.odds)) ? `<small>${esc(item.odds)}</small>` : '';
+      return `<button type="button" class="choice ${numeric ? 'number-choice' : 'odds-choice'} ${item.hint ? 'has-hint' : ''} ${active ? 'picked' : ''} ${headPicked ? 'head-pick' : ''} ${dragPicked ? 'drag-pick' : ''}" data-pick="${esc(g.key)}" data-value="${esc(token)}" data-combo-choice="${esc(value)}" data-combo-tab="${esc(tab)}" data-combo-mode-value="${mode}" aria-pressed="${active}"><span class="${numeric ? lottoColor(value) : ''}">${esc(value)}</span>${item.hint ? lottoHintMarkup(item.hint) : ''}${odds}${headPicked || dragPicked ? `<b class="lian-badge">${headPicked ? '头' : '拖'}</b>` : ''}</button>`;
     }).join('')}</div>`;
   }
 
