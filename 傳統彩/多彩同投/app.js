@@ -228,8 +228,8 @@
     return values;
   }
   const demoHistory = g => Array.from({ length: 10 }, (_, index) => ({ issue: String(Number(g.issue) - index - 1), time: new Date(Date.now() - (index + 1) * Math.max(parseClock(g.close), 60) * 1000).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: false }), values: demoResult(g.id, Number(g.issue) - index - 1, index, g.game) }));
-  const newCardState = (base, key, game = base.game) => ({ ...base, key, game, selected: [], expanded: false, compact: true, remaining: parseClock(base.close), closedFor: 0, betIssue: base.issue, remindedIssue: '', history: demoHistory({ ...base, game }) });
-  const cards = groups.map((g, i) => ({ ...newCardState(g, `${g.id}-${i}`), compact: i !== 0 }));
+  const newCardState = (base, key, game = base.game) => ({ ...base, key, game, selected: [], expanded: false, remaining: parseClock(base.close), closedFor: 0, betIssue: base.issue, remindedIssue: '', history: demoHistory({ ...base, game }) });
+  const cards = groups.map((g, i) => newCardState(g, `${g.id}-${i}`));
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const formatMoney = n => Number(n).toFixed(2);
@@ -492,11 +492,6 @@
   function cardMarkup(g) {
     const picked = g.selected.length;
     const betCount = cardBetCount(g);
-    if (g.compact) return `<article class="lottery-card compact-card ${picked ? 'has-pick' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && picked ? 'bet-closed' : ''}" id="group-${g.id}" data-card="${esc(g.key)}">
-      <div class="compact-head"><span class="group-logo-placeholder" role="img" aria-label="${esc(groupNames[g.id])}图片额外设计"><span>图片<br>额外设计</span></span><div class="compact-title"><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i>·</i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div><button type="button" class="remove-game" data-remove="${esc(g.key)}" aria-label="移除${esc(g.game)}彩种">×</button></div>
-      <div class="compact-draw"><span>上期开奖 <small>示意</small></span><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div>${historyButtonMarkup(g)}</div>
-      <div class="compact-foot"><span class="compact-bet-count">${betCount ? (isBetClosed(g) ? `已封盘 · ${betCount} 注不可提交` : `${betCount} 注待投注 · ¥${formatMoney(betCount * g.amount)}`) : '尚未选择投注项'}</span><button type="button" data-open-card="${esc(g.key)}">展开投注 <span aria-hidden="true">↗</span></button></div>
-    </article>`;
     const play = playDefinition(g);
     const displayedValues = play.values.length > 20 && !g.expanded ? play.values.slice(0, 20) : play.values;
     const options = displayedValues.map((value, i) => {
@@ -593,12 +588,6 @@
       const node = document.querySelector(`[data-card="${CSS.escape(g.key)}"]`);
       if (!node) return;
       const picked = g.selected.length;
-      if (g.compact) {
-        node.querySelector('.compact-bet-count').textContent = bets ? (isBetClosed(g) ? `已封盘 · ${bets} 注不可提交` : `${bets} 注待投注 · ¥${formatMoney(bets * g.amount)}`) : '尚未选择投注项';
-        node.classList.toggle('has-pick', picked > 0);
-        node.classList.toggle('bet-closed', isBetClosed(g) && picked > 0);
-        return;
-      }
       const status = node.querySelector('.card-count');
       status.textContent = picked ? `${isBetClosed(g) ? '已封盘 · ' : ''}已选 ${picked} 项 · ${bets} 注` : '尚未选择';
       status.classList.toggle('muted', !picked);
@@ -621,10 +610,8 @@
     $('#cards').innerHTML = cards.length ? cards.map(cardMarkup).join('') : '<div class="empty-desk"><strong>投注桌目前是空的</strong><p>加入彩种后，就能在这里组合投注。</p><button type="button" data-add-empty>添加彩种</button></div>';
     totals();
   }
-  function activateCard(key) {
+  function jumpToCard(key) {
     if (!cards.some(card => card.key === key)) return;
-    cards.forEach(card => { card.compact = card.key !== key; });
-    render();
     document.querySelector(`[data-card="${CSS.escape(key)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   function refreshCard(g, focusSelector) {
@@ -658,8 +645,6 @@
     if (isAdd) {
       const base = groups.find(g => g.id === nextGroup);
       const card = newCardState(base, `${base.id}-${Date.now()}`, nextGame);
-      cards.forEach(item => { item.compact = true; });
-      card.compact = false;
       cards.push(card);
       closeModal();
       render();
@@ -672,7 +657,7 @@
     if (current.game === nextGame) { closeModal(); return; }
     const apply = () => {
       const base = groups.find(g => g.id === nextGroup);
-      Object.assign(current, { ...newCardState(base, targetKey, nextGame), compact: false });
+      Object.assign(current, newCardState(base, targetKey, nextGame));
       closeModal();
       render();
       toast(`已更换为${nextGame}`);
@@ -745,13 +730,11 @@
       $('#history-root').innerHTML = '';
       return;
     }
-    const openCard = e.target.closest('[data-open-card]');
-    if (openCard) { activateCard(openCard.dataset.openCard); return; }
     const reminderJump = e.target.closest('[data-reminder-jump]');
     if (reminderJump) {
       const key = reminderJump.dataset.reminderJump;
       closeModal();
-      activateCard(key);
+      jumpToCard(key);
       return;
     }
     if (e.target.closest('[data-reminder-review]')) { submitSummary(); return; }
@@ -764,7 +747,7 @@
       }
     }
     const jump = e.target.closest('[data-jump]');
-    if (jump) { activateCard(jump.dataset.jump); return; }
+    if (jump) { jumpToCard(jump.dataset.jump); return; }
 
     const baoNumber = e.target.closest('[data-bao-number]');
     if (baoNumber) {
@@ -965,7 +948,7 @@
       const current = cards.find(c => c.key === data.targetKey);
       if (current) {
         const base = groups.find(g => g.id === data.nextGroup);
-        Object.assign(current, { ...newCardState(base, current.key, data.nextGame), compact: false });
+        Object.assign(current, newCardState(base, current.key, data.nextGame));
         delete $('#modal-root').dataset.pendingChange;
         closeModal();
         render();
