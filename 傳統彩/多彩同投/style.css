@@ -112,6 +112,26 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .draw-balls-lotto .draw-ball.ball-red { background: #b83d46; color: #fff; }
 .draw-balls-lotto .draw-ball.ball-blue { background: #2764a9; color: #fff; }
 .draw-balls-lotto .draw-ball.ball-green { background: #237a4b; color: #fff; }
+.history-toggle { width: 100%; min-height: 37px; display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding: 0 12px; border: 1px solid color-mix(in srgb, var(--card-accent) 28%, #ead9c5); border-radius: 10px; background: linear-gradient(120deg, #fffefa, var(--card-glow)); color: var(--card-deep); font-size: 12px; font-weight: 650; cursor: pointer; }
+.history-toggle span:last-child { font-size: 11px; font-weight: 550; }
+.history-toggle:focus-visible { outline: 2px solid var(--card-accent); outline-offset: 2px; }
+.history-panel { padding: 12px 15px 14px; border-top: 1px solid #ecdcca; background: linear-gradient(145deg, #fffcf8, #fff6ec); }
+.history-panel[hidden] { display: none; }
+.history-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; color: #583c2b; font-size: 13px; }
+.history-panel-head span { color: #876b54; font-size: 10px; }
+.history-list { display: grid; gap: 7px; }
+.history-item { display: grid; grid-template-columns: 73px minmax(0, 1fr); align-items: center; gap: 6px; min-height: 38px; padding: 7px 9px; border: 1px solid #edddcc; border-radius: 10px; background: #fffefa; box-shadow: 0 2px 5px #8054310b; }
+.history-issue { color: #684d3a; font-size: 11px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.history-item .draw-balls { margin: 0; gap: 4px; }
+.history-item .draw-ball { width: 21px; height: 21px; font-size: 10px; }
+.history-item .draw-special { width: 23px; height: 23px; }
+.history-item .draw-die { width: 27px; height: 27px; grid-template-columns: repeat(3, 5px); grid-template-rows: repeat(3, 5px); gap: 1px; border-radius: 7px; box-shadow: 0 2px 0 #e7d6c4; }
+.history-item .draw-die .pip { width: 5px; height: 5px; }
+.history-item .draw-formula-digit, .history-item .draw-formula strong { width: 23px; height: 23px; font-size: 11px; }
+.history-item .draw-plus { line-height: 21px; }
+.lottery-card.bet-closed { border-color: #d9bdb0; }
+.lottery-card.bet-closed [data-countdown], .category-nav button.bet-closed [data-countdown] { color: #a33d2a; font-weight: 750; }
+.category-nav button.bet-closed { border-left-color: #ad4c34; }
 .draw-ball.race-0 { background: #f0dcdf; }.draw-ball.race-1 { background: #e3dff1; }.draw-ball.race-2 { background: #dce9ed; }.draw-ball.race-3 { background: #f1e4d4; }.draw-ball.race-4 { background: #deebe0; }
 .play-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 70px; padding: 10px 15px 13px; border-top: 1px solid #eadcdd; border-bottom: 1px solid #eadcdd; background: linear-gradient(90deg, #fbf3f1, #f8eff1); }
 .play-row-main { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
@@ -471,6 +491,8 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .amount-control button { background: #fff0dc; color: #81502d; }
 .checkout { border-top-color: #ecd7c0; background: #fffaf3ed; box-shadow: 0 -9px 30px #9e673621; }
 .total small { color: #6b513f; }
+#closed-note { color: #a43d23; font-weight: 650; }
+#closed-note[hidden] { display: none; }
 .checkout-button, .primary-button { background: linear-gradient(110deg, #c84a1c 0%, #ee6727 50%, #ff9a3f 100%); color: #fff; box-shadow: inset 0 1px 0 #ffffff4d, 0 7px 16px #b554263b; transition: filter .18s ease, box-shadow .18s ease; }
 .checkout-button:disabled { background: #e4e3dc; color: #98a09b; box-shadow: none; }
 .modal { background: #fffdf9; box-shadow: 0 22px 55px #452b1e55; }
@@ -484,6 +506,26 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .confirm-change p, .review-row, .review-total { color: #654d3d; }
 .review-game, .review-row { border-color: #eddfd0; }
 .review-play-list span { background: #fff0df; color: #80502c; }
+.review-game { padding: 8px 0 12px; }
+.review-row strong { display: block; color: #4e392c; font-size: 13px; }
+.review-row small { display: block; margin-top: 3px; color: #806957; font-size: 11px; }
+.review-state { display: inline-flex; margin: 0 0 9px; padding: 4px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.state-open { background: #e9f4e9; color: #2a6c3e; }
+.state-closed { background: #fff0e8; color: #a74027; }
+.review-closed { background: #fff9f5; }
+.review-warning { margin: 8px 0 10px; padding: 11px; border: 1px solid #f0c5af; border-radius: 10px; background: #fff3e9; color: #8c3b23; font-size: 12px; line-height: 1.55; }
+.review-picks { max-height: 74px; overflow: auto; margin: 8px 0 0; color: #755d4e; font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+.review-actions .primary-button:disabled { background: #e4e3dc; color: #98a09b; box-shadow: none; }
+.closing-alert { padding: 24px 19px 16px; text-align: center; }
+.closing-alert-icon { width: 48px; height: 48px; display: grid; place-items: center; margin: 0 auto 8px; border-radius: 15px; background: linear-gradient(145deg, #fff0d8, #ffca98); color: #a34519; box-shadow: inset 0 1px 0 #fff, 0 4px 0 #e3ad7e, 0 8px 16px #a96a3d2b; font-size: 17px; font-weight: 800; }
+.closing-alert>small { color: #9a5636; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.closing-alert h2 { margin: 5px 0 7px; color: #4c3225; font-size: 20px; }
+.closing-alert p { margin: 0; color: #6b5142; font-size: 13px; line-height: 1.65; }
+.closing-alert p b { color: #b6421a; font-size: 18px; font-variant-numeric: tabular-nums; }
+.closing-alert p strong { color: #813d25; }
+.closing-alert-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 19px; }
+.closing-alert-actions button { min-height: 45px; border-radius: 10px; font-size: 13px; font-weight: 700; }
+.reminder-cancel { width: 100%; margin-top: 7px; padding: 8px; border: 0; background: transparent; color: #877667; font-size: 12px; }
 .toast { background: #4b3528; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .lottery-card:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 #fff, 0 4px 0 color-mix(in srgb, var(--card-accent) 30%, #e9d8c5), 0 16px 26px #7d492332, 0 31px 48px #7d492323; }

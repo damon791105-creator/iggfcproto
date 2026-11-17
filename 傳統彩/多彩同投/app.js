@@ -211,7 +211,25 @@
   };
   const parseClock = value => { const [minutes, seconds] = value.split(':').map(Number); return minutes * 60 + seconds; };
   const formatClock = seconds => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
-  const cards = groups.map((g, i) => ({ ...g, key: `${g.id}-${i}`, selected: [], expanded: false, remaining: parseClock(g.close) }));
+  // 开奖号码与周期是原型示意；正式版须由彩种开奖及盘口接口提供。
+  function demoResult(id, issue, offset = 0, game = groups.find(group => group.id === id).game) {
+    if (!offset && game === groups.find(group => group.id === id).game) return [...previousResults[id]];
+    const count = { lotto: 7, pk10: 10, ssc: 5, klc: 8, x115: 5, k8: 20, k3: 3, '3d': 3, pcdd: 3 }[id];
+    const max = { lotto: 49, pk10: 10, ssc: 10, klc: 20, x115: 11, k8: 80, k3: 6, '3d': 10, pcdd: 10 }[id];
+    const unique = ['lotto', 'pk10', 'klc', 'x115', 'k8'].includes(id);
+    const gameSeed = [...game].reduce((value, character) => Math.imul(value, 31) + character.codePointAt(0) >>> 0, 0);
+    let seed = (Number(issue) * 1103515245 + offset * 12345 + gameSeed) >>> 0;
+    const values = [];
+    while (values.length < count) {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      const value = seed % max + (['ssc', '3d', 'pcdd'].includes(id) ? 0 : 1);
+      if (!unique || !values.includes(value)) values.push(value);
+    }
+    return values;
+  }
+  const demoHistory = g => Array.from({ length: 7 }, (_, index) => ({ issue: String(Number(g.issue) - index - 1), values: demoResult(g.id, Number(g.issue) - index - 1, index, g.game) }));
+  const newCardState = (base, key, game = base.game) => ({ ...base, key, game, selected: [], expanded: false, historyExpanded: false, remaining: parseClock(base.close), closedFor: 0, betIssue: base.issue, remindedIssue: '', history: demoHistory({ ...base, game }) });
+  const cards = groups.map((g, i) => newCardState(g, `${g.id}-${i}`));
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const formatMoney = n => Number(n).toFixed(2);
@@ -326,7 +344,9 @@
     return g.selected.filter(value => value.startsWith(`${playName}-`)).length;
   }
   const cardBetCount = g => playCatalog[g.id].reduce((sum, play) => sum + playBetCount(g, play.name), 0);
-  const isClosingSoon = g => g.remaining > 0 && g.remaining <= 30;
+  const isClosingSoon = g => g.remaining > 0 && g.remaining <= 30 && g.betIssue === g.issue;
+  const isBetClosed = g => g.remaining === 0 || g.betIssue !== g.issue;
+  const clockLabel = g => g.remaining === 0 ? '已封盘' : g.betIssue !== g.issue && g.selected.length ? '原期已封盘' : formatClock(g.remaining);
   function hasUnformedLianSelection(g) {
     if (g.id === 'pcdd') {
       const bao = g.selected.filter(value => value.startsWith('主势盘-包三|')).length;
@@ -348,7 +368,7 @@
   function navMarkup() {
     $('#category-nav').innerHTML = cards.length ? cards.map(g => {
       const bets = cardBetCount(g);
-      return `<button class="nav-game ${bets ? 'has-pending' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''}" type="button" data-jump="${esc(g.key)}"><strong>${esc(g.game)}</strong><span class="nav-meta">${esc(groupNames[g.id])} <i>·</i> 封盘 <b data-countdown="${esc(g.key)}">${formatClock(g.remaining)}</b></span><span class="nav-pending">待投注 <b>${bets} 注</b></span><span class="nav-bet-count" aria-hidden="true">${bets}</span></button>`;
+      return `<button class="nav-game ${bets ? 'has-pending' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && bets ? 'bet-closed' : ''}" type="button" data-jump="${esc(g.key)}"><strong>${esc(g.game)}</strong><span class="nav-meta">${esc(groupNames[g.id])} <i>·</i> 封盘 <b data-countdown="${esc(g.key)}">${clockLabel(g)}</b></span><span class="nav-pending">${isBetClosed(g) ? '不可提交' : '待投注'} <b>${bets} 注</b></span><span class="nav-bet-count" aria-hidden="true">${bets}</span></button>`;
     }).join('') : '<p class="nav-empty">尚未加入彩种</p>';
   }
   function updateNavOverflow() {
@@ -356,8 +376,7 @@
     document.querySelector('.nav-label').classList.toggle('has-horizontal-scroll', nav.scrollWidth > nav.clientWidth + 1);
   }
 
-  function resultMarkup(g) {
-    const values = previousResults[g.id];
+  function resultMarkup(g, values = g.history[0].values) {
     if (g.id === 'pcdd') return `<span class="draw-formula">${values.map((value, index) => `${index ? '<i>+</i>' : ''}<b class="draw-formula-digit">${value}</b>`).join('')}<i>=</i><strong>${values.reduce((a, b) => a + b, 0)}</strong></span>`;
     if (g.id === 'k3') {
       return values.map(value => `<span class="draw-die" role="img" aria-label="${value}点">${dicePips[value].map(position => `<i class="pip pip-${position}"></i>`).join('')}</span>`).join('');
@@ -367,6 +386,9 @@
   }
 
   const resultRule = { lotto: '6 正码 ＋ 1 特别号', pk10: '第 1 至第 10 名', ssc: '五球', klc: '8 个号码', x115: '5 个号码', k8: '20 个号码', k3: '3 颗骰子', '3d': '3 个号码', pcdd: '三码和值' };
+  function historyMarkup(g) {
+    return `<div class="history-panel" id="history-${esc(g.key)}" ${g.historyExpanded ? '' : 'hidden'}><div class="history-panel-head"><strong>近 7 期开奖</strong><span>原型示意数据</span></div><div class="history-list">${g.history.map(row => `<div class="history-item"><span class="history-issue">${esc(row.issue)} 期</span><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g, row.values)}</div></div>`).join('')}</div></div>`;
+  }
 
   function lianPairMarkup(g, section, tab, mode) {
     return `<div class="lian-pair-board">${['A', 'B'].map(side => {
@@ -517,18 +539,19 @@
         return `${positionHead}<button type="button" class="choice ${active ? 'picked' : ''} ${numberBall ? 'number-choice' : 'odds-choice'} ${item.hint ? 'has-hint' : ''} ${item.position ? 'position-choice' : ''} ${dice ? 'dice-choice' : ''}" data-pick="${esc(g.key)}" data-value="${esc(token)}" aria-label="${item.position ? `${esc(item.position)} ` : ''}${esc(item.value)} ${esc(item.odds)}" aria-pressed="${active}">${valueMarkup}${item.hint ? g.id === 'lotto' ? lottoHintMarkup(item.hint) : `<em class="choice-hint">${esc(item.hint)}</em>` : ''}<small>${esc(item.odds)}</small></button>`;
       }).join('')}</div>`}</section>`;
     }).join('') : ''}</div>` : `<div class="choices ${play.kind === 'sum' ? 'sum-choices' : ''} ${play.values.length > 20 ? 'k8-choices' : ''} ${play.kind === 'odds' ? 'odds-choices' : ''}">${options}</div>`;
-    const status = picked ? `<span class="card-count">已选 ${picked} 项 · ${betCount} 注</span>` : `<span class="card-count muted">尚未选择</span>`;
+    const status = picked ? `<span class="card-count">${isBetClosed(g) ? '已封盘 · ' : ''}已选 ${picked} 项 · ${betCount} 注</span>` : `<span class="card-count muted">尚未选择</span>`;
     const playOptions = playCatalog[g.id].map(item => {
       const saved = g.selected.filter(value => value.startsWith(`${item.name}-`)).length;
       return `<option value="${esc(item.name)}" ${item.name === g.play ? 'selected' : ''}>${esc(item.name)}${saved && item.name !== g.play ? ` · 已选 ${saved} 项` : ''}</option>`;
     }).join('');
     const savedPlayCount = playCatalog[g.id].filter(item => g.selected.some(value => value.startsWith(`${item.name}-`))).length;
-    return `<article class="lottery-card ${picked ? 'has-pick' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''}" id="group-${g.id}" data-card="${esc(g.key)}">
+    return `<article class="lottery-card ${picked ? 'has-pick' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && picked ? 'bet-closed' : ''}" id="group-${g.id}" data-card="${esc(g.key)}">
       <header class="card-head">
-        <div class="card-head-main"><div class="card-title"><span class="group-logo-placeholder" role="img" aria-label="${esc(groupNames[g.id])}图片额外设计"><span>图片<br>额外设计</span></span><div><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i></i> 封盘 <em data-countdown="${esc(g.key)}">${formatClock(g.remaining)}</em></p></div></div>
+        <div class="card-head-main"><div class="card-title"><span class="group-logo-placeholder" role="img" aria-label="${esc(groupNames[g.id])}图片额外设计"><span>图片<br>额外设计</span></span><div><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i></i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div></div>
           <button type="button" class="remove-game" data-remove="${esc(g.key)}" aria-label="移除${esc(g.game)}彩种" title="移除彩种">×</button>
           <div class="card-head-actions"><button type="button" class="change-game" data-change="${esc(g.key)}" aria-label="更换${esc(g.game)}">更换彩种</button><button type="button" class="reset-picks" data-reset="${esc(g.key)}" aria-label="重置${esc(g.game)}选号" ${picked ? '' : 'disabled'}>重置选号</button></div></div>
-        <div class="draw-row"><div class="draw-heading"><span>上期开奖 <small>示意</small></span><span>${esc(resultRule[g.id])}</span></div><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div></div>
+        <div class="draw-row"><div class="draw-heading"><span>上期开奖 <small>示意</small></span><span>${esc(resultRule[g.id])}</span></div><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div><button type="button" class="history-toggle" data-history="${esc(g.key)}" aria-expanded="${g.historyExpanded}" aria-controls="history-${esc(g.key)}"><span>近 7 期开奖</span><span aria-hidden="true">${g.historyExpanded ? '收起 ↑' : '查看 ↓'}</span></button></div>
+        ${historyMarkup(g)}
       </header>
       <div class="play-row"><div class="play-row-main"><span class="play-label">目前玩法</span><select class="play-select" data-play="${esc(g.key)}" aria-label="${esc(g.game)}玩法">${playOptions}</select></div><span class="play-retained">${savedPlayCount ? `已选 ${savedPlayCount} 个玩法 · ${betCount} 注` : ''}</span></div>
       ${subplaySwitch}
@@ -540,18 +563,24 @@
   }
 
   function totals() {
-    const count = cards.reduce((n, g) => n + cardBetCount(g), 0);
-    const amount = cards.reduce((n, g) => n + cardBetCount(g) * g.amount, 0);
+    const count = cards.reduce((n, g) => n + (isBetClosed(g) ? 0 : cardBetCount(g)), 0);
+    const closedCount = cards.reduce((n, g) => n + (isBetClosed(g) ? cardBetCount(g) : 0), 0);
+    const amount = cards.reduce((n, g) => n + (isBetClosed(g) ? 0 : cardBetCount(g) * g.amount), 0);
     $('#selected-count').textContent = cards.length;
     $('#bet-count').textContent = count;
     $('#summary-count').textContent = count;
+    $('#closed-count').textContent = closedCount;
+    $('#closed-note').hidden = closedCount === 0;
     $('#summary-total').textContent = formatMoney(amount);
-    $('#checkout').disabled = count === 0;
+    $('#checkout').disabled = count + closedCount === 0;
+    $('#checkout').textContent = count ? '确认投注' : closedCount ? '查看封盘项目' : '确认投注';
     cards.forEach(g => {
       const bets = cardBetCount(g);
       const nav = document.querySelector(`[data-jump="${CSS.escape(g.key)}"]`);
       if (nav) {
         nav.classList.toggle('has-pending', bets > 0);
+        nav.classList.toggle('bet-closed', isBetClosed(g) && bets > 0);
+        nav.querySelector('.nav-pending').firstChild.textContent = isBetClosed(g) ? '不可提交 ' : '待投注 ';
         nav.querySelector('.nav-pending b').textContent = `${bets} 注`;
         const badge = nav.querySelector('.nav-bet-count');
         badge.textContent = bets;
@@ -560,7 +589,7 @@
       if (!node) return;
       const picked = g.selected.length;
       const status = node.querySelector('.card-count');
-      status.textContent = picked ? `已选 ${picked} 项 · ${bets} 注` : '尚未选择';
+      status.textContent = picked ? `${isBetClosed(g) ? '已封盘 · ' : ''}已选 ${picked} 项 · ${bets} 注` : '尚未选择';
       status.classList.toggle('muted', !picked);
       const savedPlayCount = playCatalog[g.id].filter(item => g.selected.some(value => value.startsWith(`${item.name}-`))).length;
       node.querySelector('.play-retained').textContent = savedPlayCount ? `已选 ${savedPlayCount} 个玩法 · ${bets} 注` : '';
@@ -570,6 +599,7 @@
       });
       node.querySelector('.subtotal b').textContent = `¥${formatMoney(bets * g.amount)}`;
       node.classList.toggle('has-pick', picked > 0);
+      node.classList.toggle('bet-closed', isBetClosed(g) && picked > 0);
       node.querySelector('.reset-picks').disabled = picked === 0;
     });
   }
@@ -610,7 +640,7 @@
   function changeGame(targetKey, nextGame, nextGroup, isAdd) {
     if (isAdd) {
       const base = groups.find(g => g.id === nextGroup);
-      const card = { ...base, key: `${base.id}-${Date.now()}`, game: nextGame, selected: [], expanded: false, remaining: parseClock(base.close) };
+      const card = newCardState(base, `${base.id}-${Date.now()}`, nextGame);
       cards.push(card);
       closeModal();
       render();
@@ -623,7 +653,7 @@
     if (current.game === nextGame) { closeModal(); return; }
     const apply = () => {
       const base = groups.find(g => g.id === nextGroup);
-      Object.assign(current, { ...base, key: targetKey, game: nextGame, selected: [], pcddBao: ['', '', ''], subplayChoice: {}, innerTabs: {}, lianModes: {}, lianRoles: {}, comboModes: {}, comboRoles: {}, expanded: false, remaining: parseClock(base.close) });
+      Object.assign(current, newCardState(base, targetKey, nextGame));
       closeModal();
       render();
       toast(`已更换为${nextGame}`);
@@ -653,20 +683,65 @@
   }
   function submitSummary() {
     const chosen = cards.filter(g => cardBetCount(g) > 0);
-    const count = chosen.reduce((n, g) => n + cardBetCount(g), 0);
-    const amount = chosen.reduce((n, g) => n + cardBetCount(g) * g.amount, 0);
+    const available = chosen.filter(g => !isBetClosed(g));
+    const blocked = chosen.filter(isBetClosed);
+    const count = available.reduce((n, g) => n + cardBetCount(g), 0);
+    const amount = available.reduce((n, g) => n + cardBetCount(g) * g.amount, 0);
+    const readablePick = token => {
+      const parts = token.slice(token.indexOf('-') + 1).split('|').filter(Boolean);
+      if (parts.length > 2 && parts[0] === parts[1]) parts.shift();
+      return parts.join(' · ');
+    };
     const rows = chosen.map(g => {
       const plays = playCatalog[g.id].filter(play => g.selected.some(value => value.startsWith(`${play.name}-`)));
-      return `<div class="review-game"><div class="review-row"><span>${esc(g.game)} · ${esc(g.issue)}期</span><b>${cardBetCount(g)} 注　¥${formatMoney(cardBetCount(g) * g.amount)}</b></div><div class="review-play-list">${plays.map(play => `<span>${esc(play.name)} ${playBetCount(g, play.name)} 注</span>`).join('')}</div></div>`;
+      const closed = isBetClosed(g);
+      const issue = g.betIssue || g.issue;
+      return `<div class="review-game ${closed ? 'review-closed' : ''}"><div class="review-row"><span><strong>${esc(g.game)}</strong><small>${esc(issue)} 期</small></span><b>${cardBetCount(g)} 注　¥${formatMoney(cardBetCount(g) * g.amount)}</b></div><span class="review-state ${closed ? 'state-closed' : 'state-open'}">${closed ? '已封盘 · 不可提交' : '可提交'}</span><div class="review-play-list">${plays.map(play => `<span>${esc(play.name)} ${playBetCount(g, play.name)} 注</span>`).join('')}</div><p class="review-picks">已选项目：${esc(g.selected.map(readablePick).join('、'))}</p></div>`;
     }).join('');
     const partial = cards.some(hasUnformedLianSelection);
-    showModal(`<header class="modal-head"><div><small>请核对投注内容</small><h2>确认投注</h2></div><button type="button" class="modal-close" data-close aria-label="关闭">×</button></header><div class="review-body">${rows}${partial ? '<p class="review-partial">未凑成一注的组合选号不会提交。</p>' : ''}<div class="review-total"><span>${chosen.length} 个彩种 · ${count} 注投注</span><strong>¥${formatMoney(amount)}</strong></div></div><div class="modal-actions review-actions"><button type="button" class="secondary-button" data-close>返回调整</button><button type="button" class="primary-button" data-submit-all>确认提交</button></div>`);
+    showModal(`<header class="modal-head"><div><small>请核对每个彩种与期号</small><h2>确认投注</h2></div><button type="button" class="modal-close" data-close aria-label="关闭">×</button></header><div class="review-body">${blocked.length ? `<p class="review-warning">${blocked.length} 个彩种已封盘，所选投注不会送出；请重置选号后再选新期。</p>` : ''}${rows}${partial ? '<p class="review-partial">未凑成一注的组合选号不会提交。</p>' : ''}<div class="review-total"><span>可提交 ${available.length} 个彩种 · ${count} 注</span><strong>¥${formatMoney(amount)}</strong></div></div><div class="modal-actions review-actions"><button type="button" class="secondary-button" data-close>返回调整</button><button type="button" class="primary-button" data-submit-all ${available.length ? '' : 'disabled'}>确认提交可投项目</button></div>`);
+    $('#modal-root').dataset.reviewSnapshot = JSON.stringify(available.map(g => [g.key, g.issue, cardBetCount(g), g.amount]));
+  }
+  function maybeShowClosingAlert() {
+    if ($('#modal-root').firstElementChild) return;
+    const g = cards.find(card => card.remaining > 0 && card.remaining <= 15 && cardBetCount(card) > 0 && card.betIssue === card.issue && card.remindedIssue !== card.issue);
+    if (!g) return;
+    g.remindedIssue = g.issue;
+    const count = cardBetCount(g);
+    showModal(`<div class="closing-alert"><span class="closing-alert-icon">15</span><small>即将封盘</small><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期还有 <b data-alert-countdown="${esc(g.key)}">${formatClock(g.remaining)}</b>，你有 <strong>${count} 注待投注</strong>。请尽快确认，封盘后该期不能送出。</p><div class="closing-alert-actions"><button type="button" class="secondary-button" data-reminder-jump="${esc(g.key)}">跳往彩种</button><button type="button" class="primary-button" data-reminder-review>查看并送单</button></div><button type="button" class="reminder-cancel" data-close>稍后处理</button></div>`);
   }
 
   document.addEventListener('click', e => {
     if (e.target.closest('#back-to-top')) {
       window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       return;
+    }
+    const historyButton = e.target.closest('[data-history]');
+    if (historyButton) {
+      const g = cards.find(card => card.key === historyButton.dataset.history);
+      if (g) {
+        g.historyExpanded = !g.historyExpanded;
+        historyButton.setAttribute('aria-expanded', String(g.historyExpanded));
+        historyButton.lastElementChild.textContent = g.historyExpanded ? '收起 ↑' : '查看 ↓';
+        document.getElementById(`history-${g.key}`).hidden = !g.historyExpanded;
+      }
+      return;
+    }
+    const reminderJump = e.target.closest('[data-reminder-jump]');
+    if (reminderJump) {
+      const key = reminderJump.dataset.reminderJump;
+      closeModal();
+      document.querySelector(`[data-card="${CSS.escape(key)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (e.target.closest('[data-reminder-review]')) { submitSummary(); return; }
+    if (e.target.closest('[data-pick], [data-bao-number], [data-lian-pair]')) {
+      const cardNode = e.target.closest('[data-card]');
+      const g = cards.find(card => card.key === cardNode?.dataset.card);
+      if (g && isBetClosed(g)) {
+        toast(g.betIssue !== g.issue ? '原期已封盘，请重置选号后投注新期' : '当前彩种已封盘，请等待下一期');
+        return;
+      }
     }
     const jump = e.target.closest('[data-jump]');
     if (jump) document.querySelector(`[data-card="${CSS.escape(jump.dataset.jump)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -840,7 +915,7 @@
     const confirmReset = e.target.closest('[data-confirm-reset]');
     if (confirmReset) {
       const g = cards.find(c => c.key === confirmReset.dataset.confirmReset);
-      if (g) { g.selected = []; g.pcddBao = ['', '', '']; closeModal(); render(); toast(`${g.game}已重置选号`); }
+      if (g) { g.selected = []; g.betIssue = g.issue; g.pcddBao = ['', '', '']; closeModal(); render(); toast(`${g.game}已重置选号`); }
     }
     const remove = e.target.closest('[data-remove]');
     if (remove) {
@@ -870,7 +945,7 @@
       const current = cards.find(c => c.key === data.targetKey);
       if (current) {
         const base = groups.find(g => g.id === data.nextGroup);
-        Object.assign(current, { ...base, key: current.key, game: data.nextGame, selected: [], pcddBao: ['', '', ''], subplayChoice: {}, innerTabs: {}, lianModes: {}, lianRoles: {}, comboModes: {}, comboRoles: {}, expanded: false, remaining: parseClock(base.close) });
+        Object.assign(current, newCardState(base, current.key, data.nextGame));
         delete $('#modal-root').dataset.pendingChange;
         closeModal();
         render();
@@ -880,8 +955,18 @@
 
     if (e.target.closest('#checkout')) submitSummary();
     if (e.target.closest('[data-submit-all]')) {
+      const available = cards.filter(g => cardBetCount(g) > 0 && !isBetClosed(g));
+      const snapshot = JSON.stringify(available.map(g => [g.key, g.issue, cardBetCount(g), g.amount]));
+      if (!available.length || snapshot !== $('#modal-root').dataset.reviewSnapshot) {
+        submitSummary();
+        toast('盘口状态已变化，请重新核对');
+        return;
+      }
+      const count = available.reduce((sum, g) => sum + cardBetCount(g), 0);
+      available.forEach(g => { g.selected = []; g.betIssue = g.issue; });
       closeModal();
-      toast('投注已提交（原型演示）');
+      render();
+      toast(`${count} 注已提交（原型演示）`);
     }
     const position = e.target.closest('[data-position]');
     if (position) {
@@ -914,15 +999,47 @@
   render();
   updateBackToTop();
   setInterval(() => {
-    cards.forEach(g => { g.remaining = g.remaining > 0 ? g.remaining - 1 : parseClock(g.close); });
+    let newIssue = false;
+    let becameClosed = false;
+    cards.forEach(g => {
+      if (g.remaining > 0) { g.remaining -= 1; if (g.remaining === 0) becameClosed = true; return; }
+      g.closedFor += 1;
+      if (g.closedFor < 12) return;
+      g.history.unshift({ issue: g.issue, values: demoResult(g.id, g.issue, 8, g.game) });
+      g.history = g.history.slice(0, 7);
+      g.issue = String(Number(g.issue) + 1);
+      g.remaining = parseClock(g.close);
+      g.closedFor = 0;
+      if (!g.selected.length) g.betIssue = g.issue;
+      newIssue = true;
+    });
+    if (newIssue) render();
+    else if (becameClosed) totals();
     document.querySelectorAll('[data-countdown]').forEach(node => {
       const g = cards.find(card => card.key === node.dataset.countdown);
-      if (g) node.textContent = formatClock(g.remaining);
+      if (g) node.textContent = clockLabel(g);
+    });
+    document.querySelectorAll('[data-alert-countdown]').forEach(node => {
+      const g = cards.find(card => card.key === node.dataset.alertCountdown);
+      if (!g) return;
+      if (isBetClosed(g)) {
+        const alert = node.closest('.closing-alert');
+        alert.querySelector('small').textContent = '本期已封盘';
+        alert.querySelector('.closing-alert-icon').textContent = '!';
+        alert.querySelector('p').innerHTML = `第 ${esc(g.betIssue)} 期的 <strong>${cardBetCount(g)} 注已选投注</strong>已不可提交。请查看清单或重置选号，切勿送往下一期。`;
+        alert.querySelector('[data-reminder-review]').textContent = '查看封盘项目';
+      } else node.textContent = formatClock(g.remaining);
     });
     cards.forEach(g => {
       const closingSoon = isClosingSoon(g);
-      document.querySelector(`[data-jump="${CSS.escape(g.key)}"]`)?.classList.toggle('closing-soon', closingSoon);
-      document.querySelector(`[data-card="${CSS.escape(g.key)}"]`)?.classList.toggle('closing-soon', closingSoon);
+      const nav = document.querySelector(`[data-jump="${CSS.escape(g.key)}"]`);
+      const card = document.querySelector(`[data-card="${CSS.escape(g.key)}"]`);
+      nav?.classList.toggle('closing-soon', closingSoon);
+      card?.classList.toggle('closing-soon', closingSoon);
+      nav?.classList.toggle('bet-closed', isBetClosed(g) && cardBetCount(g) > 0);
+      card?.classList.toggle('bet-closed', isBetClosed(g) && g.selected.length > 0);
+      if (nav) nav.querySelector('.nav-pending').firstChild.textContent = isBetClosed(g) ? '不可提交 ' : '待投注 ';
     });
+    maybeShowClosingAlert();
   }, 1000);
 })();
