@@ -14,12 +14,12 @@
     lotto: ['极速六合彩', 'IG六合彩', '十分六合彩', '澳门六合彩', '新澳门六合彩'],
     pk10: ['极速赛车', '一分赛车', '比特币一分赛车', '三分赛车', '澳洲赛车', '比特币三分赛车', 'IG赛车', 'IG飞艇', '比特币飞艇', '新幸运飞艇', '幸运飞艇'],
     ssc: ['极速时时彩', '一分时时彩', '比特币一分时时彩', '三分时时彩', '威尼斯时时彩', '澳洲幸运5', 'IG时时彩', '河内一分彩', '河内五分彩'],
-    klc: ['极速快乐十分', '三分快乐十分', '米兰快乐十分', '里昂快乐十分', '湖南', '幸运农场', '广东'],
-    x115: ['极速十一选五', '三分十一选五', '罗马十一选五', '巴黎十一选五', '江西', '山东', '辽宁', '湖北', '广东'],
-    k8: ['极速快乐八', '三分快乐八', '戛纳快乐八', '柏林快乐八', '斯洛伐克', '台湾', '北京'],
-    k3: ['秒速快三', '一分快三', '极速快三', '三分快三', '马德里快三', '莫斯科快三', '江苏骰宝', '安徽', '上海', '湖北'],
+    klc: ['极速快乐十分', '三分快乐十分', '米兰快乐十分', '里昂快乐十分', '湖南快乐十分', '幸运农场', '广东快乐十分'],
+    x115: ['极速十一选五', '三分十一选五', '罗马十一选五', '巴黎十一选五', '江西十一选五', '山东十一选五', '辽宁十一选五', '湖北十一选五', '广东十一选五'],
+    k8: ['极速快乐八', '三分快乐八', '戛纳快乐八', '柏林快乐八', '斯洛伐克快乐八', '台湾快乐八', '北京快乐八'],
+    k3: ['秒速快三', '一分快三', '极速快三', '三分快三', '马德里快三', '莫斯科快三', '江苏骰宝', '安徽快三', '上海快三', '湖北快三'],
     '3d': ['极速3D', '三分3D', '日内瓦3D', '维也纳3D', '福彩3D', '排列三3D'],
-    pcdd: ['极速PC蛋蛋', '比特币PC蛋蛋', '三分PC蛋蛋', '戛纳PC蛋蛋', '柏林PC蛋蛋', '斯洛伐克', '台湾', '北京'],
+    pcdd: ['极速PC蛋蛋', '比特币PC蛋蛋', '三分PC蛋蛋', '戛纳PC蛋蛋', '柏林PC蛋蛋', '斯洛伐克PC蛋蛋', '台湾PC蛋蛋', '北京PC蛋蛋'],
   };
   const seq = (start, end, pad = false) => Array.from({ length: end - start + 1 }, (_, i) => pad ? String(start + i).padStart(2, '0') : String(start + i));
   const digits = seq(0, 9);
@@ -548,9 +548,12 @@
       return `<option value="${esc(item.name)}" ${item.name === g.play ? 'selected' : ''}>${esc(item.name)}${saved && item.name !== g.play ? ` · 已选 ${saved} 项` : ''}</option>`;
     }).join('');
     const savedPlayCount = playCatalog[g.id].filter(item => g.selected.some(value => value.startsWith(`${item.name}-`))).length;
+    const logoIndex = Math.max(0, catalog[g.id].indexOf(g.game));
+    const logoKey = `${g.id}-${String(logoIndex).padStart(2, '0')}`;
+    const logoPath = `assets/logos/${logoKey}.${logoKey === 'k8-02' || logoKey === 'pcdd-03' ? 'svg' : 'png'}`;
     return `<article class="lottery-card ${picked ? 'has-pick' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && picked ? 'bet-closed' : ''}" id="group-${g.id}" data-card="${esc(g.key)}">
       <header class="card-head">
-        <div class="card-head-main"><div class="card-title"><span class="group-logo-placeholder" role="img" aria-label="${esc(groupNames[g.id])}图片额外设计"><span>图片<br>额外设计</span></span><div><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i></i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div></div>
+        <div class="card-head-main"><div class="card-title"><img class="game-emblem" src="${logoPath}" alt="" aria-hidden="true" loading="lazy"><div><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i></i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div></div>
           <button type="button" class="remove-game" data-remove="${esc(g.key)}" aria-label="移除${esc(g.game)}彩种" title="移除彩种">×</button>
           <div class="card-head-actions"><button type="button" class="change-game" data-change="${esc(g.key)}" aria-label="更换${esc(g.game)}">更换彩种</button><button type="button" class="reset-picks" data-reset="${esc(g.key)}" aria-label="重置${esc(g.game)}选号" ${picked ? '' : 'disabled'}>重置选号</button></div></div>
         <div class="draw-row"><div class="draw-heading"><span>上期开奖 <small>示意</small></span><span>${esc(resultRule[g.id])}</span>${historyButtonMarkup(g)}</div><div class="draw-balls draw-balls-${g.id}">${resultMarkup(g)}</div></div>
