@@ -550,7 +550,7 @@
     const savedPlayCount = playCatalog[g.id].filter(item => g.selected.some(value => value.startsWith(`${item.name}-`))).length;
     const logoIndex = Math.max(0, catalog[g.id].indexOf(g.game));
     const logoKey = `${g.id}-${String(logoIndex).padStart(2, '0')}`;
-    const logoPath = `assets/logos/${logoKey}.${logoKey === 'k8-02' || logoKey === 'pcdd-03' ? 'svg' : 'png'}`;
+    const logoPath = `assets/logos/${logoKey}.png`;
     return `<article class="lottery-card ${picked ? 'has-pick' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && picked ? 'bet-closed' : ''}" id="group-${g.id}" data-card="${esc(g.key)}">
       <header class="card-head">
         <div class="card-head-main"><div class="card-title"><img class="game-emblem" src="${logoPath}" alt="" aria-hidden="true" loading="lazy"><div><h2>${esc(g.game)}</h2><p>第 ${esc(g.issue)} 期 <i></i> 封盘 <em data-countdown="${esc(g.key)}">${clockLabel(g)}</em></p></div></div>
