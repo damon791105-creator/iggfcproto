@@ -368,6 +368,8 @@
 .history-button.is-open { background: #fff2e4; }
 .history-button svg { width: 21px; height: 21px; display: block; }
 .history-button.is-open svg { transform: rotate(180deg); }
+.option small.odds, .option.selected small.odds { color: #bd3434; font-weight: 650; }
+.option small.no-odds, .option.selected small.no-odds { color: #9b8b80; }
 .history-panel { min-height: calc(100% - 64px); padding: 10px 12px 32px; background: linear-gradient(180deg, #fffdfa, #fff8f0); }
 .history-heading { display: grid; grid-template-columns: minmax(76px, 26%) 1fr; align-items: center; min-height: 32px; padding: 0 9px; border-radius: 7px; background: #f7e8d9; color: #795946; font-size: 12px; }
 .history-heading span:last-child { text-align: center; }

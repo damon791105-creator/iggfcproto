@@ -51,7 +51,7 @@
     const numeric = /^\d{1,2}$/.test(value);
     const key = `${groupIndex}|${sectionIndex}|${itemIndex}|${value}`;
     const active = card.selected.has(key);
-    return `<button type="button" class="option ${active ? 'selected' : ''}" data-bet="${card.id}" data-key="${esc(key)}" data-description="${esc(`${cardData(card)[groupIndex].title} · ${value}`)}" aria-pressed="${active}"><b class="${numeric && card.group === 'lotto' ? wave(value) : ''}">${esc(numeric && card.group === 'lotto' ? value.padStart(2, '0') : value)}</b><small>${esc(item.odds || '—')}</small></button>`;
+    return `<button type="button" class="option ${active ? 'selected' : ''}" data-bet="${card.id}" data-key="${esc(key)}" data-description="${esc(`${cardData(card)[groupIndex].title} · ${value}`)}" aria-pressed="${active}"><b class="${numeric && card.group === 'lotto' ? wave(value) : ''}">${esc(numeric && card.group === 'lotto' ? value.padStart(2, '0') : value)}</b><small class="${item.odds ? 'odds' : 'no-odds'}">${esc(item.odds || '—')}</small></button>`;
   }
   function sectionsFor(card, group, groupIndex) {
     let sections = group.sections || [{ title: group.title, items: group.items || [] }];
