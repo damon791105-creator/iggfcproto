@@ -19,7 +19,7 @@
   const issueSamples = { lotto: 467338, pk10: 260051, ssc: 259689, klc: 886420, x115: 721559, k8: 319204, k3: 680230, '3d': 452188, pcdd: 1894229 };
   const countdownSamples = { lotto: 40, pk10: 825, ssc: 36, klc: 75, x115: 58, k8: 130, k3: 27, '3d': 220, pcdd: 49 };
   const cards = [
-    { id: 0, group: 'pk10', game: '澳洲赛车', logo: 'pk10-04', issue: 260052, last: 260051, remaining: 825, draw: [2, 9, 10, 7, 6, 1, 8, 3, 5, 4], full: true, muted: true, selected: new Set() },
+    { id: 0, group: 'pk10', game: '澳洲赛车', logo: 'pk10-04', issue: 260052, last: 260051, remaining: 825, draw: [2, 9, 10, 7, 6, 1, 8, 3, 5, 4], full: false, muted: true, selected: new Set() },
     { id: 1, group: 'lotto', game: '极速六合彩', logo: 'lotto-00', issue: 467339, last: 467338, remaining: 40, draw: [40, 21, 41, 32, 28, 3, 4], full: false, muted: true, selected: new Set() },
     { id: 2, group: 'pk10', game: '一分赛车', logo: 'pk10-01', issue: 201008, last: 201007, remaining: 42, draw: [9, 6, 2, 7, 8, 3, 4, 10, 5, 1], full: false, muted: true, selected: new Set() },
   ];
