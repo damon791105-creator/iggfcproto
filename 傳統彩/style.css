@@ -171,3 +171,21 @@
 .classic-section-tabs span{border-right:1px solid #bbb}.classic-section-tabs span.active{background:#ff641e;color:#fff}
 .classic-primary-market{cursor:pointer}
 @media(max-width:390px){.classic-number-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.classic-number-grid .classic-choice{height:49px;grid-template-columns:27px minmax(0,1fr);padding:0 3px}.classic-number-grid .classic-choice span i{width:23px;height:23px;font-size:11px}}
+
+/* Keep the classic betting board legible on phones. */
+@media(max-width:480px){
+  .classic-active-market{font-size:13px}
+  .classic-modes button{font-size:13px}
+  .classic-sides button{font-size:13px}
+  .classic-section h3{font-size:15px}
+  .classic-choice{font-size:15px}
+  .classic-choice b{font-size:14px;font-weight:600}
+  .classic-number-grid .classic-choice{height:56px;grid-template-columns:30px minmax(0,1fr)}
+  .classic-number-grid .classic-choice span i{width:29px;height:29px;font-size:14px}
+  .classic-number-grid .classic-choice b{font-size:13px}
+}
+@media(max-width:360px){
+  .classic-sides button{gap:4px;padding:0 4px;font-size:12px}
+  .classic-sides button i{width:9px;height:9px;flex-basis:9px}
+  .classic-modes button{font-size:12px}
+}
