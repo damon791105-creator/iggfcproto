@@ -4,17 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#c65320">
-  <title>多桌下注 · 配色提案</title>
+  <title>多桌下注 2.0 · 手机原型</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="metallic.css?v=20261121-red-odds">
+  <link rel="stylesheet" href="metallic.css?v=20261121-mode-switch">
 </head>
 <body>
   <main id="app">
     <header class="app-header">
       <a class="back" href="../index.html#gamePage" aria-label="返回单桌模式">‹</a>
-      <h1>多桌下注</h1>
-      <a class="single-mode" href="../index.html#gamePage">单桌模式</a>
+      <h1>多桌下注 2.0</h1>
+      <a class="legacy-mode" href="../多彩同投/index.html">1.0 旧版</a>
     </header>
+    <nav class="desk-mode-switch" aria-label="投注界面切换">
+      <div class="desk-mode-switch-track">
+        <a href="../index.html#gamePage">经典投注</a>
+        <span aria-current="page">多桌下注 2.0</span>
+      </div>
+    </nav>
     <div class="desk-list" id="desk-list"></div>
     <footer class="bet-footer">
       <div class="bet-summary"><span>已选 <b id="bet-count">0</b> 注 · 金额 <b id="bet-total">¥0</b></span><small>余额 ¥4,984　 今日 -2</small></div>

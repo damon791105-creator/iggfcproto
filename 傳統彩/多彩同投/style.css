@@ -568,4 +568,6 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 
 /* Each child lottery gets a complete emblem with its Simplified Chinese title in the artwork. */
 .game-emblem { width: 72px; height: 72px; flex: 0 0 72px; display: block; margin: -5px 0 -3px; object-fit: contain; filter: drop-shadow(0 3px 3px #5b2b1e4d); }
+.new-version-link { display: block; padding: 9px 18px; background: #fff6eb; border-bottom: 1px solid #eac4a4; color: #a34622; font-size: 12px; font-weight: 700; text-align: right; text-decoration: none; }
+.new-version-link:focus-visible { outline: 2px solid #c95827; outline-offset: -2px; }
 @media (max-width: 380px) { .game-emblem { width: 66px; height: 66px; flex-basis: 66px; } }
