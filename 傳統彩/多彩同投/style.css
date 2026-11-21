@@ -48,6 +48,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .nav-label.has-horizontal-scroll span:last-child { display: block; }
 .category-nav { display: grid; grid-auto-flow: column; grid-template-rows: repeat(3, 78px); grid-auto-columns: 148px; gap: 8px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scroll-padding-inline: 18px; -webkit-overflow-scrolling: touch; padding: 0 18px 17px; background: var(--paper); scrollbar-width: none; }
 .category-nav::-webkit-scrollbar { display: none; }
+.nav-label.is-empty, .category-nav.is-empty { display: none; }
 .category-nav button { position: relative; min-width: 0; height: 78px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 4px; padding: 7px 12px; border: 1px solid #e1d2d3; border-radius: 12px; background: linear-gradient(145deg, #fffefa, #fbf6f3); color: #49384a; text-align: left; box-shadow: 0 2px 4px #52344709; scroll-snap-align: start; }
 .category-nav button strong { display: block; max-width: 100%; overflow: hidden; color: #3e2c3f; font-size: 13px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
 .category-nav button.has-pending strong { max-width: calc(100% - 27px); }

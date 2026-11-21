@@ -230,7 +230,7 @@
   }
   const demoHistory = g => Array.from({ length: 10 }, (_, index) => ({ issue: String(Number(g.issue) - index - 1), time: new Date(Date.now() - (index + 1) * Math.max(parseClock(g.close), 60) * 1000).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit', hour12: false }), values: demoResult(g.id, Number(g.issue) - index - 1, index, g.game) }));
   const newCardState = (base, key, game = base.game) => ({ ...base, key, game, selected: [], expanded: false, remaining: parseClock(base.close), closedFor: 0, betIssue: base.issue, remindedIssue: '', history: demoHistory({ ...base, game }) });
-  const cards = groups.map((g, i) => newCardState(g, `${g.id}-${i}`));
+  const cards = [];
   const $ = s => document.querySelector(s);
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const formatMoney = n => Number(n).toFixed(2);
@@ -367,10 +367,13 @@
   let modalFocus = null;
 
   function navMarkup() {
-    $('#category-nav').innerHTML = cards.length ? cards.map(g => {
+    const nav = $('#category-nav');
+    nav.classList.toggle('is-empty', cards.length === 0);
+    document.querySelector('.nav-label').classList.toggle('is-empty', cards.length === 0);
+    nav.innerHTML = cards.length ? cards.map(g => {
       const bets = cardBetCount(g);
       return `<button class="nav-game ${bets ? 'has-pending' : ''} ${isClosingSoon(g) ? 'closing-soon' : ''} ${isBetClosed(g) && bets ? 'bet-closed' : ''}" type="button" data-jump="${esc(g.key)}"><strong>${esc(g.game)}</strong><span class="nav-meta">${esc(groupNames[g.id])} <i>·</i> 封盘 <b data-countdown="${esc(g.key)}">${clockLabel(g)}</b></span><span class="nav-pending">${isBetClosed(g) ? '不可提交' : '待投注'} <b>${bets} 注</b></span><span class="nav-bet-count" aria-hidden="true">${bets}</span></button>`;
-    }).join('') : '<p class="nav-empty">尚未加入彩种</p>';
+    }).join('') : '';
   }
   function updateNavOverflow() {
     const nav = $('#category-nav');
@@ -612,7 +615,7 @@
   function render() {
     navMarkup();
     updateNavOverflow();
-    $('#cards').innerHTML = cards.length ? cards.map(cardMarkup).join('') : '<div class="empty-desk"><strong>投注桌目前是空的</strong><p>加入彩种后，就能在这里组合投注。</p><button type="button" data-add-empty>添加彩种</button></div>';
+    $('#cards').innerHTML = cards.length ? cards.map(cardMarkup).join('') : '<div class="empty-desk"><strong>添加第一个彩种</strong><p>选择你想投注的彩种，加入后就能在同一页组合投注。</p><button type="button" data-add-empty>添加彩种</button></div>';
     totals();
   }
   function jumpToCard(key) {
@@ -622,9 +625,15 @@
   function refreshCard(g, focusSelector) {
     const node = document.querySelector(`[data-card="${CSS.escape(g.key)}"]`);
     if (!node) return;
+    const scrollY = window.scrollY;
+    const subplayScrollLeft = node.querySelector('.subplay-grid.scrollable')?.scrollLeft ?? 0;
     node.outerHTML = cardMarkup(g);
+    const updated = document.querySelector(`[data-card="${CSS.escape(g.key)}"]`);
+    const subplayGrid = updated?.querySelector('.subplay-grid.scrollable');
+    if (subplayGrid) subplayGrid.scrollLeft = subplayScrollLeft;
+    if (window.scrollY !== scrollY) window.scrollTo({ top: scrollY, behavior: 'instant' });
     totals();
-    if (focusSelector) document.querySelector(`[data-card="${CSS.escape(g.key)}"] ${focusSelector}`)?.focus({ preventScroll: true });
+    if (focusSelector) updated?.querySelector(focusSelector)?.focus({ preventScroll: true });
   }
 
   function showModal(html) {
@@ -675,7 +684,7 @@
   function applyPlayChange(current, nextPlay) {
     current.play = nextPlay;
     current.expanded = false;
-    render();
+    refreshCard(current, '[data-play]');
   }
   function requestPlayChange(cardKey, nextPlay) {
     const current = cards.find(c => c.key === cardKey);
