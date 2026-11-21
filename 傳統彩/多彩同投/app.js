@@ -368,7 +368,6 @@
 
   function navMarkup() {
     const nav = $('#category-nav');
-    nav.style.setProperty('--nav-rows', Math.min(cards.length, 3));
     nav.classList.toggle('is-empty', cards.length === 0);
     document.querySelector('.nav-label').classList.toggle('is-empty', cards.length === 0);
     nav.innerHTML = cards.length ? cards.map(g => {
