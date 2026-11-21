@@ -65,7 +65,7 @@
   }
   function cardMarkup(card) {
     const data = cardData(card);
-    return `<article class="desk group-${card.group} ${card.full ? 'full' : ''}" data-card="${card.id}">
+    return `<article class="desk group-${card.group} ${card.full ? 'full' : ''} ${card.remaining > 0 && card.remaining <= 30 ? 'is-closing' : ''}" data-card="${card.id}">
       <div class="desk-head"><img class="desk-logo" src="${logo(card.logo)}" alt=""><strong class="desk-title">${esc(card.game)}</strong><button type="button" class="change-game" data-change="${card.id}">⇄ 换游戏</button><button type="button" class="sound ${card.muted ? 'is-muted' : ''}" data-sound="${card.id}" aria-label="${card.muted ? '开启声音' : '关闭声音'}">${soundIcon}</button><button type="button" class="size-toggle" data-size="${card.id}" aria-label="${card.full ? '切换半屏高度' : '切换完整高度'}">${card.full ? '完整' : '1/2'}</button></div>
       <div class="desk-content"><div class="results"><div class="result-line"><span class="period">${card.last}期</span>${drawMarkup(card)}<button type="button" class="history-button ${card.showHistory ? 'is-open' : ''}" data-history="${card.id}" aria-label="${card.showHistory ? '返回投注区' : '查看开奖记录'}" aria-expanded="${Boolean(card.showHistory)}">${historyIcon}</button></div><div class="issue-line"><span>${card.issue}期　封盘 <strong data-countdown="${card.id}">${clock(card.remaining)}</strong></span><div class="utility-tabs">${['路子', '两面长龙', '遗漏'].map(label => `<button type="button" data-utility="${card.id}" data-utility-name="${label}">${label}</button>`).join('')}</div></div>
       ${card.showHistory ? historyMarkup(card) : `<div class="board-layout"><nav class="side-nav" aria-label="${esc(card.game)}玩法">${data.map((group, index) => `<button type="button" data-jump="${card.id}" data-index="${index}" class="${index === 0 ? 'active' : ''}">${esc(group.title)}</button>`).join('')}</nav><div class="board">${data.map((group, index) => `<div class="board-group" data-group="${index}">${sectionsFor(card, group, index)}</div>`).join('')}</div></div>`}</div>
@@ -155,7 +155,13 @@
     else if (button.hasAttribute('data-submit')) { const count = cards.reduce((n, item) => n + item.selected.size, 0); cards.forEach(item => item.selected.clear()); closeModal(); render(); toast(`${count} 注已确认（原型演示）`); }
   });
   document.addEventListener('click', event => { if (event.target.matches('[data-backdrop]')) closeModal(); });
-  setInterval(() => cards.forEach(card => { if (card.remaining > 0) card.remaining -= 1; const timer = document.querySelector(`[data-countdown="${card.id}"]`); if (timer) timer.textContent = clock(card.remaining); }), 1000);
+  setInterval(() => cards.forEach(card => {
+    if (card.remaining > 0) card.remaining -= 1;
+    const timer = document.querySelector(`[data-countdown="${card.id}"]`);
+    if (!timer) return;
+    timer.textContent = clock(card.remaining);
+    timer.closest('.desk')?.classList.toggle('is-closing', card.remaining > 0 && card.remaining <= 30);
+  }), 1000);
   fetch('../多彩同投/reference-mobile-lotto.json').then(response => response.json()).then(data => { lottoData = data; render(); }).catch(() => { lottoData = [{ title: '特码', items: Array.from({ length: 49 }, (_, index) => ({ value: index + 1, odds: '48.72' })) }]; render(); });
   render();
 })();

@@ -198,3 +198,12 @@
   .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child) .classic-result-line .balls{flex:0 0 auto;gap:1px}
   .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child) .classic-result-line .ball{width:clamp(19px,5.8vw,22px);height:clamp(19px,5.8vw,22px);flex-basis:clamp(19px,5.8vw,22px);font-size:clamp(11px,3.3vw,13px)}
 }
+
+/* Align the account figures and give the important numbers a clear type hierarchy. */
+@media(max-width:480px){
+  .classic-account{display:grid;grid-template-columns:64px 76px minmax(0,1fr) 40px;column-gap:4px;align-items:center;height:23px;border-top:1px solid #f1e6dc;color:#74675e;font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:.01em}
+  .classic-account strong{min-width:0;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+  .classic-account span{min-width:0;gap:2px;align-items:baseline}
+  .classic-account span:last-child{justify-self:end}
+  .classic-account b{color:#d94729;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:0}
+}
