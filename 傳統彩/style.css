@@ -189,3 +189,12 @@
   .classic-sides button i{width:9px;height:9px;flex-basis:9px}
   .classic-modes button{font-size:12px}
 }
+
+/* A ten-ball draw needs a narrower result row on small phones. */
+@media(max-width:385px){
+  .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child){padding-inline:8px}
+  .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child) .classic-result-line{gap:3px}
+  .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child) .classic-result-line strong{flex-basis:60px;font-size:11px}
+  .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child) .classic-result-line .balls{flex:0 0 auto;gap:1px}
+  .classic-results:has(.classic-result-line .balls>.ball:nth-child(10):last-child) .classic-result-line .ball{width:clamp(19px,5.8vw,22px);height:clamp(19px,5.8vw,22px);flex-basis:clamp(19px,5.8vw,22px);font-size:clamp(11px,3.3vw,13px)}
+}
