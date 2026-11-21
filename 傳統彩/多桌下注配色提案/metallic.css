@@ -340,11 +340,22 @@
   .history-button { width: 20px; height: 20px; }
 }
 
-/* Keep the three desks at the source mobile page's full viewport width and sizes. */
+/* Give every desk a predictable height while keeping its betting board scrollable. */
 #app, .bet-footer { max-width: none; }
 .desk-list { gap: 4px; padding: 4px 4px 14px; }
-.desk-content { height: calc(50dvh - 130px); min-height: 235px; }
-.desk.full .desk-content { height: calc(90dvh - 128px); min-height: 420px; }
+.desk-content { height: 260px; }
+.desk.full .desk-content { height: min(69dvh, 550px); min-height: 420px; }
+.desk-title { font-size: 16px; }
+.change-game, .size-toggle { font-size: 12px; }
+.board-layout { grid-template-columns: 88px minmax(0, 1fr); }
+.side-nav button { min-height: 38px; font-size: 12px; }
+.board-section h2 { font-size: 13px; }
+.board-section h2 small { font-size: 11px; }
+.option b { font-size: 14px; }
+.option small, .option-grid.numbers .option small { font-size: 11px; }
+.option-grid.numbers .option b { width: 27px; height: 27px; font-size: 12px; }
+.period, .issue-line { font-size: 12px; }
+.utility-tabs button { font-size: 11px; }
 .results { padding-right: 18px; }
 .history-button, .history-button:where(:hover, :focus-visible) {
   display: grid;
@@ -387,12 +398,22 @@
 .history-row .balls.k8 { display: flex; }
 .history-note { margin: 12px 0 0; color: #9d8573; font-size: 11px; text-align: right; }
 @media (max-width: 480px) {
+  .board-layout { grid-template-columns: 84px minmax(0, 1fr); }
+  .desk-title { font-size: 16px; }
   .results { padding-right: 11px; }
   .results .balls { gap: 1px; }
-  .results .ball { width: 20px; height: 20px; flex-basis: 20px; font-size: 10px; }
+  .results .ball { width: 20px; height: 20px; flex-basis: 20px; font-size: 11px; }
   .results .balls.lotto .ball { width: 20px; height: 20px; flex-basis: 20px; }
   .history-row .balls { gap: 2px; }
   .history-row .ball { width: 19px; height: 19px; flex-basis: 19px; font-size: 9px; }
   .history-row .balls.k8 .ball { width: 16px; height: 16px; flex-basis: 16px; }
   .history-button { width: 28px; height: 28px; }
+}
+@media (max-width: 360px) {
+  .board-layout { grid-template-columns: 78px minmax(0, 1fr); }
+  .side-nav button { gap: 4px; padding-inline: 4px; font-size: 11px; }
+  .period { flex-basis: 52px; font-size: 10px; }
+  .issue-line { font-size: 11px; }
+  .result-line { gap: 3px; }
+  .results .ball, .results .balls.lotto .ball { width: 17px; height: 17px; flex-basis: 17px; font-size: 10px; }
 }
