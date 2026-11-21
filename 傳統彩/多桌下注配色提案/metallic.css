@@ -400,6 +400,8 @@
 @media (max-width: 480px) {
   .board-layout { grid-template-columns: 84px minmax(0, 1fr); }
   .desk-title { font-size: 16px; }
+  .option-grid.numbers { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .option-grid.numbers .option b { width: 29px; height: 29px; font-size: 13px; }
   .results { padding-right: 11px; }
   .results .balls { gap: 1px; }
   .results .ball { width: 20px; height: 20px; flex-basis: 20px; font-size: 11px; }
