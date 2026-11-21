@@ -203,7 +203,7 @@
 @media(max-width:480px){
   .classic-account{display:grid;grid-template-columns:64px 76px minmax(0,1fr) 40px;column-gap:4px;align-items:center;height:23px;border-top:1px solid #f1e6dc;color:#74675e;font-family:'Microsoft YaHei','PingFang SC',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:.01em}
   .classic-account strong{min-width:0;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
-  .classic-account span{min-width:0;gap:2px;align-items:baseline}
+  .classic-account span{display:block;min-width:0;line-height:18px}
   .classic-account span:last-child{justify-self:end}
-  .classic-account b{color:#d94729;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:0}
+  .classic-account b{margin-left:2px;color:#d94729;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:0;line-height:inherit}
 }
