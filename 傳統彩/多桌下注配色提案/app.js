@@ -19,7 +19,7 @@
   const issueSamples = { lotto: 467338, pk10: 260051, ssc: 259689, klc: 886420, x115: 721559, k8: 319204, k3: 680230, '3d': 452188, pcdd: 1894229 };
   const countdownSamples = { lotto: 40, pk10: 825, ssc: 36, klc: 75, x115: 58, k8: 130, k3: 27, '3d': 220, pcdd: 49 };
   const cards = [
-    { id: 0, group: 'pk10', game: '澳洲赛车', logo: 'pk10-04', issue: 260052, last: 260051, remaining: 825, draw: [2, 9, 10, 7, 6, 1, 8, 3, 5, 4], full: false, muted: true, selected: new Set() },
+    { id: 0, group: 'pk10', game: '澳洲赛车', logo: 'pk10-04', issue: 260052, last: 260051, remaining: 825, draw: [2, 9, 10, 7, 6, 1, 8, 3, 5, 4], full: true, muted: true, selected: new Set() },
     { id: 1, group: 'lotto', game: '极速六合彩', logo: 'lotto-00', issue: 467339, last: 467338, remaining: 40, draw: [40, 21, 41, 32, 28, 3, 4], full: false, muted: true, selected: new Set() },
     { id: 2, group: 'pk10', game: '一分赛车', logo: 'pk10-01', issue: 201008, last: 201007, remaining: 42, draw: [9, 6, 2, 7, 8, 3, 4, 10, 5, 1], full: false, muted: true, selected: new Set() },
   ];
@@ -34,8 +34,16 @@
   const logo = key => `../多彩同投/assets/logos/${key}.png`;
   const soundIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M16 9c1.5 1.5 1.5 4.5 0 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path class="slash" d="M3 3l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 
-  function drawMarkup(card) {
-    return `<div class="balls ${card.group}">${card.draw.map((number, index) => `${card.group === 'lotto' && index === 6 ? '<span class="draw-plus">+</span>' : ''}<span class="ball ${card.group === 'lotto' ? wave(number) : card.group === 'pk10' ? `rank-${number}` : card.group === 'k3' ? 'die' : ''} ${card.group === 'lotto' && index === 6 ? 'special' : ''}">${card.group === 'k3' ? ['','⚀','⚁','⚂','⚃','⚄','⚅'][number] : ['lotto','klc','x115','k8'].includes(card.group) ? String(number).padStart(2, '0') : number}</span>`).join('')}${card.group === 'pcdd' ? `<span class="draw-plus">=</span><span class="ball sum">${card.draw.reduce((a, b) => a + b, 0)}</span>` : ''}</div>`;
+  function drawMarkup(card, draw = card.draw) {
+    return `<div class="balls ${card.group}">${draw.map((number, index) => `${card.group === 'lotto' && index === 6 ? '<span class="draw-plus">+</span>' : ''}<span class="ball ${card.group === 'lotto' ? wave(number) : card.group === 'pk10' ? `rank-${number}` : card.group === 'k3' ? 'die' : ''} ${card.group === 'lotto' && index === 6 ? 'special' : ''}">${card.group === 'k3' ? ['','⚀','⚁','⚂','⚃','⚄','⚅'][number] : ['lotto','klc','x115','k8'].includes(card.group) ? String(number).padStart(2, '0') : number}</span>`).join('')}${card.group === 'pcdd' ? `<span class="draw-plus">=</span><span class="ball sum">${draw.reduce((a, b) => a + b, 0)}</span>` : ''}</div>`;
+  }
+  function historyMarkup(card) {
+    const rows = Array.from({ length: 10 }, (_, index) => {
+      const draw = index ? card.draw.map((_, position) => card.draw[(position + index) % card.draw.length]) : card.draw;
+      const time = new Date(Date.UTC(2026, 0, 1, 21, 0) - index * 20 * 60000).toISOString().slice(11, 16);
+      return `<div class="history-row"><div class="history-period"><strong>${card.last - index}</strong><small>${time}</small></div>${drawMarkup(card, draw)}</div>`;
+    }).join('');
+    return `<section class="history-panel" aria-label="${esc(card.game)}开奖记录"><div class="history-heading"><span>期号 / 时间</span><span>开奖号码</span></div><div class="history-rows">${rows}</div><p class="history-note">展示数据仅供原型预览</p></section>`;
   }
   function optionMarkup(card, groupIndex, sectionIndex, item, itemIndex) {
     const value = String(item.value);
@@ -58,8 +66,8 @@
     const data = cardData(card);
     return `<article class="desk group-${card.group} ${card.full ? 'full' : ''}" data-card="${card.id}">
       <div class="desk-head"><img class="desk-logo" src="${logo(card.logo)}" alt=""><strong class="desk-title">${esc(card.game)}</strong><button type="button" class="change-game" data-change="${card.id}">⇄ 换游戏</button><button type="button" class="sound ${card.muted ? 'is-muted' : ''}" data-sound="${card.id}" aria-label="${card.muted ? '开启声音' : '关闭声音'}">${soundIcon}</button><button type="button" class="size-toggle" data-size="${card.id}" aria-label="${card.full ? '切换半屏高度' : '切换完整高度'}">${card.full ? '完整' : '1/2'}</button></div>
-      <div class="desk-content"><div class="results"><div class="result-line"><span class="period">${card.last}期</span>${drawMarkup(card)}<button type="button" class="history-button" data-history="${card.id}" aria-label="查看开奖记录">⌄</button></div><div class="issue-line"><span>${card.issue}期　封盘 <strong data-countdown="${card.id}">${clock(card.remaining)}</strong></span><div class="utility-tabs">${['路子', '两面长龙', '遗漏'].map(label => `<button type="button" data-utility="${card.id}" data-utility-name="${label}">${label}</button>`).join('')}</div></div>
-      <div class="board-layout"><nav class="side-nav" aria-label="${esc(card.game)}玩法">${data.map((group, index) => `<button type="button" data-jump="${card.id}" data-index="${index}" class="${index === 0 ? 'active' : ''}">${esc(group.title)}</button>`).join('')}</nav><div class="board">${data.map((group, index) => `<div class="board-group" data-group="${index}">${sectionsFor(card, group, index)}</div>`).join('')}</div></div></div>
+      <div class="desk-content"><div class="results"><div class="result-line"><span class="period">${card.last}期</span>${drawMarkup(card)}<button type="button" class="history-button ${card.showHistory ? 'is-open' : ''}" data-history="${card.id}" aria-label="${card.showHistory ? '返回投注区' : '查看开奖记录'}" aria-expanded="${Boolean(card.showHistory)}">${card.showHistory ? '⌃' : '⌄'}</button></div><div class="issue-line"><span>${card.issue}期　封盘 <strong data-countdown="${card.id}">${clock(card.remaining)}</strong></span><div class="utility-tabs">${['路子', '两面长龙', '遗漏'].map(label => `<button type="button" data-utility="${card.id}" data-utility-name="${label}">${label}</button>`).join('')}</div></div>
+      ${card.showHistory ? historyMarkup(card) : `<div class="board-layout"><nav class="side-nav" aria-label="${esc(card.game)}玩法">${data.map((group, index) => `<button type="button" data-jump="${card.id}" data-index="${index}" class="${index === 0 ? 'active' : ''}">${esc(group.title)}</button>`).join('')}</nav><div class="board">${data.map((group, index) => `<div class="board-group" data-group="${index}">${sectionsFor(card, group, index)}</div>`).join('')}</div></div>`}</div>
     </article>`;
   }
   function render(resetCard = -1) {
@@ -85,7 +93,7 @@
     showModal(modalHeader('更换游戏') + `${categories}<div class="modal-body">${body}</div>`);
   }
   function changeGame(card, name, key, group) {
-    card.game = name; card.logo = key; card.group = group; card.selected.clear(); card.full = false;
+    card.game = name; card.logo = key; card.group = group; card.selected.clear(); card.showHistory = false;
     card.draw = name === '一分赛车' ? [9, 6, 2, 7, 8, 3, 4, 10, 5, 1] : [...drawSamples[group]];
     card.last = issueSamples[group]; card.issue = card.last + 1; card.remaining = countdownSamples[group];
     closeModal(); render(card.id);
@@ -140,7 +148,7 @@
       if (card.selected.size) { pendingChange = next; showModal(modalHeader('更换游戏？') + `<div class="modal-body"><p class="modal-copy">${esc(card.game)} 已选 ${card.selected.size} 注。更换游戏后，本桌尚未提交的选择会清空。</p></div><div class="modal-actions"><button type="button" data-close>保留原桌</button><button type="button" class="primary" data-confirm-change>确认更换</button></div>`); }
       else changeGame(card, next.name, next.key, next.group);
     } else if (button.hasAttribute('data-confirm-change') && pendingChange) changeGame(pendingChange.card, pendingChange.name, pendingChange.key, pendingChange.group);
-    else if (button.hasAttribute('data-history')) history(card);
+    else if (button.hasAttribute('data-history')) { card.showHistory = !card.showHistory; render(card.id); }
     else if (button.hasAttribute('data-utility')) history(card, button.dataset.utilityName);
     else if (button.id === 'review-button') review();
     else if (button.hasAttribute('data-submit')) { const count = cards.reduce((n, item) => n + item.selected.size, 0); cards.forEach(item => item.selected.clear()); closeModal(); render(); toast(`${count} 注已确认（原型演示）`); }
