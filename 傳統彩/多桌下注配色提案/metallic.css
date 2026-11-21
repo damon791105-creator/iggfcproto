@@ -62,13 +62,19 @@
 
 .desk-list { gap: 11px; padding: 11px 9px 18px; }
 
-.desk, .desk:nth-child(2), .desk:nth-child(3) {
+.desk {
   --accent: #dc6529;
   --head-dark: #9c391e;
   --head-mid: #dd6226;
   --head-glow: #f69a48;
+  --card-border: #e7c4a5;
+  --card-edge: #b8441d;
+  --card-ink: #a4401d;
+  --card-surface: #fffaf4;
+  --card-selected: #ffe2c4;
+  --card-selected-border: #d9662b;
   position: relative;
-  border: 1px solid #e7c4a5;
+  border: 1px solid var(--card-border);
   border-left: 3px solid var(--accent);
   border-radius: 10px;
   background: #fffdfa;
@@ -79,17 +85,19 @@
     0 13px 24px #6f351b12;
 }
 
-.desk:nth-child(2) {
-  --accent: #c77940;
-  --head-dark: #8e3e24;
-  --head-mid: #c36b32;
-  --head-glow: #eea65a;
-}
-.desk:nth-child(3) {
-  --accent: #ad512c;
-  --head-dark: #79321f;
-  --head-mid: #b45127;
-  --head-glow: #e48b3c;
+.desk.group-pk10 { --accent: #dc6529; }
+
+.desk.group-lotto {
+  --accent: #2f83ad;
+  --head-dark: #153d65;
+  --head-mid: #286d9f;
+  --head-glow: #72b9d7;
+  --card-border: #bbd4e0;
+  --card-edge: #235a82;
+  --card-ink: #1d628c;
+  --card-surface: #f5fbfd;
+  --card-selected: #dceffa;
+  --card-selected-border: #3c87b3;
 }
 
 .desk::before {
@@ -100,13 +108,13 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #b8441d, #ffe2a1 45%, #e56d2e 74%, transparent);
+  background: linear-gradient(90deg, var(--card-edge), #fff6dc 45%, var(--head-mid) 74%, transparent);
   pointer-events: none;
 }
 
 .desk-head {
   min-height: 45px;
-  border-bottom-color: #9c4b2a;
+  border-bottom-color: var(--card-edge);
   background:
     radial-gradient(ellipse 80% 125% at 54% -45%, #fff1bd75, transparent 75%),
     linear-gradient(180deg, #ffffff26, transparent 55%, #57240f38),
@@ -143,7 +151,18 @@
   color: #8b5b3e;
 }
 
-.board-layout { background: #fffaf4; }
+.board-layout { background: var(--card-surface); }
+.desk.group-lotto .results { border-bottom-color: #d5e5ed; }
+.desk.group-lotto .side-nav {
+  border-right-color: #d4e2ea;
+  background: linear-gradient(90deg, #e6f0f5, #f1f8fb);
+}
+.desk.group-lotto .side-nav button { border-bottom-color: #d6e6ee; }
+.desk.group-lotto .board-section h2 {
+  border-left-color: #6ba5c4;
+  background: linear-gradient(180deg, #e8f2f6, #dcebf2);
+  color: #345c73;
+}
 .side-nav {
   border-right-color: #ead5c2;
   background: linear-gradient(90deg, #f2e7dc, #f8efe7);
@@ -151,11 +170,11 @@
 .side-nav button { border-bottom-color: #e8d8c9; color: #69594e; }
 .side-nav button::before { background: #c4b7aa; }
 .side-nav button.active {
-  background: linear-gradient(90deg, #fff4e7, #fffaf4);
-  color: #a4401d;
-  box-shadow: inset 3px 0 #e86528;
+  background: linear-gradient(90deg, #fff, var(--card-surface));
+  color: var(--card-ink);
+  box-shadow: inset 3px 0 var(--accent);
 }
-.side-nav button.active::before { background: #e56528; }
+.side-nav button.active::before { background: var(--accent); }
 
 .board-section h2 {
   border-left-color: #d27b4d;
@@ -174,15 +193,18 @@
 }
 .option small { color: #8a6f5c; }
 .option.selected {
-  border-color: #d9662b;
-  background: linear-gradient(150deg, #fff8ed 10%, #ffe2c4);
-  box-shadow: inset 0 1px #fff, inset 0 0 0 1px #ec8c4e88, 0 2px 5px #c8582430;
+  border-color: var(--card-selected-border);
+  background: linear-gradient(150deg, #fff 10%, var(--card-selected));
+  box-shadow: inset 0 1px #fff, inset 0 0 0 1px var(--card-selected-border), 0 2px 5px #68423124;
 }
-.option.selected b, .option.selected small { color: #ad3e1a; }
+.option.selected b, .option.selected small { color: var(--card-ink); }
 .option-grid.numbers .option b { background: #f3e9dd; }
 .option-grid.numbers .option.selected b {
   background: linear-gradient(145deg, #ffab55, #db5520 70%, #aa391a);
   box-shadow: inset 0 1px #ffe2a6, 0 2px 3px #8e361b44;
+}
+.desk.group-lotto .option-grid.numbers.lotto .option.selected b {
+  outline-color: var(--accent);
 }
 
 .bet-footer {
