@@ -1,4 +1,4 @@
-/* 暖铜橘视觉层：保留多桌操作结构，仅调整材质、色彩与反馈。 */
+/* 多中类金属配色：保留多桌操作结构，卡片色跟随彩种中类。 */
 :root {
   color: #382b25;
   background: #e7d9ca;
@@ -99,6 +99,41 @@
   --card-selected: #dceffa;
   --card-selected-border: #3c87b3;
 }
+.desk.group-ssc {
+  --accent: #8755a6; --head-dark: #493061; --head-mid: #8051a2; --head-glow: #bd92d5;
+  --card-border: #d9c8e2; --card-edge: #68427e; --card-ink: #6b4387;
+  --card-surface: #fcf9fe; --card-selected: #f0e3f8; --card-selected-border: #8a5bad;
+}
+.desk.group-klc {
+  --accent: #2a9570; --head-dark: #14543e; --head-mid: #238562; --head-glow: #76caa5;
+  --card-border: #b8dbc9; --card-edge: #206b52; --card-ink: #216f53;
+  --card-surface: #f7fdf9; --card-selected: #dcf2e4; --card-selected-border: #32936d;
+}
+.desk.group-x115 {
+  --accent: #268c91; --head-dark: #1a515e; --head-mid: #26888c; --head-glow: #79c8c5;
+  --card-border: #b9dadd; --card-edge: #226e75; --card-ink: #276f73;
+  --card-surface: #f6fcfc; --card-selected: #dcf1f0; --card-selected-border: #31969a;
+}
+.desk.group-k8 {
+  --accent: #3a79bb; --head-dark: #24456c; --head-mid: #3d76b3; --head-glow: #8cbded;
+  --card-border: #c4d5ea; --card-edge: #315f95; --card-ink: #35689d;
+  --card-surface: #f7faff; --card-selected: #e1edfc; --card-selected-border: #4f84c2;
+}
+.desk.group-k3 {
+  --accent: #b54858; --head-dark: #722b3a; --head-mid: #ad4354; --head-glow: #e6898e;
+  --card-border: #e5c5cb; --card-edge: #903845; --card-ink: #923f4b;
+  --card-surface: #fff9fa; --card-selected: #f9e2e5; --card-selected-border: #ba5b68;
+}
+.desk.group-3d {
+  --accent: #625baa; --head-dark: #373368; --head-mid: #6159a2; --head-glow: #aaa4db;
+  --card-border: #cecbe6; --card-edge: #4a4885; --card-ink: #534d91;
+  --card-surface: #fafaff; --card-selected: #e9e7fa; --card-selected-border: #746bb8;
+}
+.desk.group-pcdd {
+  --accent: #a47b2e; --head-dark: #67501e; --head-mid: #a57a2c; --head-glow: #d6b869;
+  --card-border: #e0d3b4; --card-edge: #806321; --card-ink: #765d27;
+  --card-surface: #fffcf5; --card-selected: #f6eacd; --card-selected-border: #a7843a;
+}
 
 .desk::before {
   content: "";
@@ -152,17 +187,6 @@
 }
 
 .board-layout { background: var(--card-surface); }
-.desk.group-lotto .results { border-bottom-color: #d5e5ed; }
-.desk.group-lotto .side-nav {
-  border-right-color: #d4e2ea;
-  background: linear-gradient(90deg, #e6f0f5, #f1f8fb);
-}
-.desk.group-lotto .side-nav button { border-bottom-color: #d6e6ee; }
-.desk.group-lotto .board-section h2 {
-  border-left-color: #6ba5c4;
-  background: linear-gradient(180deg, #e8f2f6, #dcebf2);
-  color: #345c73;
-}
 .side-nav {
   border-right-color: #ead5c2;
   background: linear-gradient(90deg, #f2e7dc, #f8efe7);
@@ -183,6 +207,22 @@
   box-shadow: inset 0 1px #fff9f2;
 }
 .board-section h2 small { color: #927c6c; }
+.desk:not(.group-pk10) .results { border-bottom-color: color-mix(in srgb, var(--accent), white 72%); }
+.desk:not(.group-pk10) .side-nav {
+  border-right-color: color-mix(in srgb, var(--accent), white 72%);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent), white 84%), var(--card-surface));
+}
+.desk:not(.group-pk10) .side-nav button { border-bottom-color: color-mix(in srgb, var(--accent), white 78%); }
+.desk:not(.group-pk10) .board-section h2 {
+  border-left-color: var(--accent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent), white 88%), color-mix(in srgb, var(--accent), white 79%));
+  color: var(--card-ink);
+}
+.balls.k8 { display: grid; grid-template-columns: repeat(10, 18px); gap: 2px; overflow: visible; }
+.balls.k8 .ball { width: 18px; height: 18px; font-size: 8px; }
+.desk.group-k8 .result-line { min-height: 43px; }
+.balls.k3 .ball.die { width: 28px; height: 28px; border-radius: 6px; background: #fff6f7; color: #a84050; font-size: 27px; line-height: 1; }
+.balls.pcdd .ball.sum { background: var(--accent); }
 
 .option {
   border-color: #ebd9c8;
@@ -235,7 +275,43 @@
 }
 .modal-head strong { color: #5a3523; }
 .modal-head button { background: #f3e5d7; color: #8a5134; }
+.picker-categories {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e8cfb7;
+  background: #fffaf5;
+}
+.picker-categories button {
+  min-width: 0;
+  height: 32px;
+  overflow: hidden;
+  padding: 0 5px;
+  border: 1px solid color-mix(in srgb, var(--group-color), white 62%);
+  border-left: 3px solid var(--group-color);
+  border-radius: 5px;
+  background: linear-gradient(135deg, #fff, color-mix(in srgb, var(--group-color), white 91%));
+  color: #4d3b35;
+  font-size: 11px;
+  font-weight: 650;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .game-group h3 { color: #9a542e; }
+.game-group h3 { display: flex; align-items: center; gap: 7px; }
+.game-group h3::before { content: ""; width: 9px; height: 9px; flex: none; border-radius: 50%; background: var(--group-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--group-color), white 82%); }
+.game-group h3 small { margin-left: auto; color: #977f70; font-size: 10px; font-weight: 500; }
+.game-group.group-pk10, .picker-categories .group-pk10 { --group-color: #dc6529; }
+.game-group.group-lotto, .picker-categories .group-lotto { --group-color: #2f83ad; }
+.game-group.group-ssc, .picker-categories .group-ssc { --group-color: #8755a6; }
+.game-group.group-klc, .picker-categories .group-klc { --group-color: #2a9570; }
+.game-group.group-x115, .picker-categories .group-x115 { --group-color: #268c91; }
+.game-group.group-k8, .picker-categories .group-k8 { --group-color: #3a79bb; }
+.game-group.group-k3, .picker-categories .group-k3 { --group-color: #b54858; }
+.game-group.group-3d, .picker-categories .group-3d { --group-color: #625baa; }
+.game-group.group-pcdd, .picker-categories .group-pcdd { --group-color: #a47b2e; }
 .game-grid button, .modal-actions button:not(.primary) {
   border-color: #ead2be;
   background: linear-gradient(180deg, #fffefa, #fbf1e8);
